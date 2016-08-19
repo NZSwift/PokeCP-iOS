@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0517B34C1D66DD920015CDFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B34B1D66DD920015CDFA /* AppDelegate.swift */; };
-		0517B34E1D66DD920015CDFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B34D1D66DD920015CDFA /* ViewController.swift */; };
 		0517B3511D66DD920015CDFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0517B34F1D66DD920015CDFA /* Main.storyboard */; };
 		0517B3541D66DD920015CDFA /* PokeCP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0517B3521D66DD920015CDFA /* PokeCP.xcdatamodeld */; };
 		0517B3561D66DD920015CDFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0517B3551D66DD920015CDFA /* Assets.xcassets */; };
 		0517B3591D66DD920015CDFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0517B3571D66DD920015CDFA /* LaunchScreen.storyboard */; };
 		0517B3641D66DD920015CDFA /* PokeCPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B3631D66DD920015CDFA /* PokeCPTests.swift */; };
 		0517B36F1D66DD920015CDFA /* PokeCPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B36E1D66DD920015CDFA /* PokeCPUITests.swift */; };
+		051B19C21D66FC7F002E726E /* MainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B19C11D66FC7F002E726E /* MainInterfaceViewController.swift */; };
+		051B19C41D66FE4C002E726E /* logoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B19C31D66FE4C002E726E /* logoViewCell.swift */; };
+		051B19C61D66FE60002E726E /* MainContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B19C51D66FE60002E726E /* MainContentViewCell.swift */; };
+		051B19C91D6703F3002E726E /* ExtentionUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B19C81D6703F3002E726E /* ExtentionUnits.swift */; };
 		0C667F684D9FEFBDA6DE42A1 /* Pods_PokeCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */; };
 		53E6350819FDF0CBB275D3A3 /* Pods_PokeCPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */; };
 		F2DD6A4E4F6DF41109CC43DA /* Pods_PokeCPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1585443E2B10AA221594CDE /* Pods_PokeCPUITests.framework */; };
@@ -40,7 +43,6 @@
 /* Begin PBXFileReference section */
 		0517B3481D66DD920015CDFA /* PokeCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0517B34B1D66DD920015CDFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0517B34D1D66DD920015CDFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0517B3501D66DD920015CDFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0517B3531D66DD920015CDFA /* PokeCP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PokeCP.xcdatamodel; sourceTree = "<group>"; };
 		0517B3551D66DD920015CDFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +54,10 @@
 		0517B36A1D66DD920015CDFA /* PokeCPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeCPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0517B36E1D66DD920015CDFA /* PokeCPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCPUITests.swift; sourceTree = "<group>"; };
 		0517B3701D66DD920015CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		051B19C11D66FC7F002E726E /* MainInterfaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainInterfaceViewController.swift; path = MainInterface/MainInterfaceViewController.swift; sourceTree = "<group>"; };
+		051B19C31D66FE4C002E726E /* logoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoViewCell.swift; sourceTree = "<group>"; };
+		051B19C51D66FE60002E726E /* MainContentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentViewCell.swift; sourceTree = "<group>"; };
+		051B19C81D6703F3002E726E /* ExtentionUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionUnits.swift; sourceTree = "<group>"; };
 		0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2EDA18FE03528465092F31 /* Pods-PokeCPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPTests/Pods-PokeCPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D81BF17B71E880132B1ED7C /* Pods-PokeCPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPUITests/Pods-PokeCPUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +122,10 @@
 		0517B34A1D66DD920015CDFA /* PokeCP */ = {
 			isa = PBXGroup;
 			children = (
+				051B19C71D6703CC002E726E /* Model */,
+				051B19C01D66FC42002E726E /* MainInterface */,
 				0517B34B1D66DD920015CDFA /* AppDelegate.swift */,
-				0517B34D1D66DD920015CDFA /* ViewController.swift */,
+				051B19C11D66FC7F002E726E /* MainInterfaceViewController.swift */,
 				0517B34F1D66DD920015CDFA /* Main.storyboard */,
 				0517B3551D66DD920015CDFA /* Assets.xcassets */,
 				0517B3571D66DD920015CDFA /* LaunchScreen.storyboard */,
@@ -143,6 +151,23 @@
 				0517B3701D66DD920015CDFA /* Info.plist */,
 			);
 			path = PokeCPUITests;
+			sourceTree = "<group>";
+		};
+		051B19C01D66FC42002E726E /* MainInterface */ = {
+			isa = PBXGroup;
+			children = (
+				051B19C31D66FE4C002E726E /* logoViewCell.swift */,
+				051B19C51D66FE60002E726E /* MainContentViewCell.swift */,
+			);
+			path = MainInterface;
+			sourceTree = "<group>";
+		};
+		051B19C71D6703CC002E726E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				051B19C81D6703F3002E726E /* ExtentionUnits.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		68AC4B57E69E72AE5E94C9E4 /* Frameworks */ = {
@@ -430,9 +455,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051B19C91D6703F3002E726E /* ExtentionUnits.swift in Sources */,
 				0517B3541D66DD920015CDFA /* PokeCP.xcdatamodeld in Sources */,
-				0517B34E1D66DD920015CDFA /* ViewController.swift in Sources */,
+				051B19C41D66FE4C002E726E /* logoViewCell.swift in Sources */,
 				0517B34C1D66DD920015CDFA /* AppDelegate.swift in Sources */,
+				051B19C61D66FE60002E726E /* MainContentViewCell.swift in Sources */,
+				051B19C21D66FC7F002E726E /* MainInterfaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PokeCP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PokeCP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
