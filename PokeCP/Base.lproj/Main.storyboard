@@ -1,25 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LUn-0K-fNc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main Interface View Controller-->
+        <scene sceneID="VrW-5N-dVu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="LUn-0K-fNc" customClass="MainInterfaceViewController" customModule="PokeCP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="No7-RZ-UJC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="logoCell" rowHeight="260" id="hRK-ol-9wx" customClass="logoViewCell" customModule="PokeCP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="260"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRK-ol-9wx" id="T6D-5M-UrS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
+                                            <rect key="frame" x="139" y="8" width="325" height="244"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="cVM-kW-utA" secondAttribute="height" multiplier="325:244" id="1wJ-VN-Hw4"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="topMargin" secondItem="cVM-kW-utA" secondAttribute="top" id="Ihn-4b-Yph"/>
+                                        <constraint firstItem="cVM-kW-utA" firstAttribute="centerY" secondItem="T6D-5M-UrS" secondAttribute="centerY" id="OC6-5C-1Dv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cVM-kW-utA" secondAttribute="bottom" id="Vwm-Z6-QJP"/>
+                                        <constraint firstItem="cVM-kW-utA" firstAttribute="width" relation="greaterThanOrEqual" secondItem="T6D-5M-UrS" secondAttribute="width" constant="-275" id="ehv-BO-a6A"/>
+                                        <constraint firstItem="cVM-kW-utA" firstAttribute="centerX" secondItem="T6D-5M-UrS" secondAttribute="centerX" constant="1" id="z7n-7E-RxB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="logoImage" destination="cVM-kW-utA" id="nb0-4r-Xz1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="contentCell" rowHeight="83" id="gV9-xR-Hed" customClass="MainContentViewCell" customModule="PokeCP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="288" width="600" height="83"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-xR-Hed" id="Bno-8j-eRj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osI-AC-W09">
+                                            <rect key="frame" x="8" y="8" width="584" height="67"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonTapped:" destination="gV9-xR-Hed" eventType="touchUpInside" id="XMT-aA-Yye"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="osI-AC-W09" firstAttribute="top" secondItem="Bno-8j-eRj" secondAttribute="topMargin" id="ChY-KO-7gQ"/>
+                                        <constraint firstItem="osI-AC-W09" firstAttribute="leading" secondItem="Bno-8j-eRj" secondAttribute="leadingMargin" id="cvJ-bn-eAt"/>
+                                        <constraint firstItem="osI-AC-W09" firstAttribute="trailing" secondItem="Bno-8j-eRj" secondAttribute="trailingMargin" id="iab-kf-tDb"/>
+                                        <constraint firstItem="osI-AC-W09" firstAttribute="bottom" secondItem="Bno-8j-eRj" secondAttribute="bottomMargin" id="q31-y7-VvQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentButton" destination="osI-AC-W09" id="7js-ks-EYe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LUn-0K-fNc" id="nog-T3-10P"/>
+                            <outlet property="delegate" destination="LUn-0K-fNc" id="fVq-1Q-R6v"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uCS-Da-9dv"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cf-11-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1037" y="526"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HeaderLogo" width="320" height="240"/>
+    </resources>
 </document>
