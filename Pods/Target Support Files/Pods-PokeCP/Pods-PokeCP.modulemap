@@ -1,0 +1,6 @@
+framework module Pods_PokeCP {
+  umbrella header "Pods-PokeCP-umbrella.h"
+
+  export *
+  module * { export * }
+}
