@@ -76,12 +76,21 @@ class MainInterfaceViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("contentCell", forIndexPath: indexPath) as? MainContentViewCell else {
                     return UITableViewCell()
                 }
-                cell.contentButton.setTitle(buttons[indexPath.row/2], forState: .Normal)
+                cell.textLabel?.text = buttons[indexPath.row/2]
                 return cell
             } else {
                 let cell = UITableViewCell()
                 cell.selectionStyle = .None
                 return cell
+            }
+        }
+    }
+
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                self.performSegueWithIdentifier("showCPCalculator", sender: self)
             }
         }
     }
