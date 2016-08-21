@@ -18,6 +18,8 @@
 		0563EBA01D69448D00AF286F /* MainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EB9F1D69448D00AF286F /* MainInterfaceViewController.swift */; };
 		0563EBA41D6944C400AF286F /* logoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA21D6944C400AF286F /* logoViewCell.swift */; };
 		0563EBA51D6944C400AF286F /* MainContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA31D6944C400AF286F /* MainContentViewCell.swift */; };
+		0563EBA71D69468A00AF286F /* CPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA61D69468A00AF286F /* CPViewController.swift */; };
+		0563EBA91D696C5800AF286F /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA81D696C5800AF286F /* Pokemon.swift */; };
 		0C667F684D9FEFBDA6DE42A1 /* Pods_PokeCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */; };
 		53E6350819FDF0CBB275D3A3 /* Pods_PokeCPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */; };
 		F2DD6A4E4F6DF41109CC43DA /* Pods_PokeCPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1585443E2B10AA221594CDE /* Pods_PokeCPUITests.framework */; };
@@ -58,6 +60,8 @@
 		0563EB9F1D69448D00AF286F /* MainInterfaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceViewController.swift; sourceTree = "<group>"; };
 		0563EBA21D6944C400AF286F /* logoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoViewCell.swift; sourceTree = "<group>"; };
 		0563EBA31D6944C400AF286F /* MainContentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentViewCell.swift; sourceTree = "<group>"; };
+		0563EBA61D69468A00AF286F /* CPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPViewController.swift; sourceTree = "<group>"; };
+		0563EBA81D696C5800AF286F /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2EDA18FE03528465092F31 /* Pods-PokeCPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPTests/Pods-PokeCPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D81BF17B71E880132B1ED7C /* Pods-PokeCPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPUITests/Pods-PokeCPUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				0563EBA11D6944C400AF286F /* View */,
 				0517B34B1D66DD920015CDFA /* AppDelegate.swift */,
 				0517B34F1D66DD920015CDFA /* Main.storyboard */,
+				0563EBA61D69468A00AF286F /* CPViewController.swift */,
 				0563EB9F1D69448D00AF286F /* MainInterfaceViewController.swift */,
 				0517B3551D66DD920015CDFA /* Assets.xcassets */,
 				0517B3571D66DD920015CDFA /* LaunchScreen.storyboard */,
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				051B19C81D6703F3002E726E /* ExtentionUnits.swift */,
+				0563EBA81D696C5800AF286F /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,7 +462,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				051B19C91D6703F3002E726E /* ExtentionUnits.swift in Sources */,
+				0563EBA91D696C5800AF286F /* Pokemon.swift in Sources */,
 				0563EBA51D6944C400AF286F /* MainContentViewCell.swift in Sources */,
+				0563EBA71D69468A00AF286F /* CPViewController.swift in Sources */,
 				0517B3541D66DD920015CDFA /* PokeCP.xcdatamodeld in Sources */,
 				0517B34C1D66DD920015CDFA /* AppDelegate.swift in Sources */,
 				0563EBA01D69448D00AF286F /* MainInterfaceViewController.swift in Sources */,
