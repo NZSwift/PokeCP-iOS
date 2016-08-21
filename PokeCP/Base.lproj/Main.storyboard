@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRK-ol-9wx" id="T6D-5M-UrS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
@@ -82,10 +82,41 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="uCS-Da-9dv"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="r3M-8g-edH" kind="presentation" id="Ibi-fw-UAq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cf-11-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="526"/>
+            <point key="canvasLocation" x="926" y="595"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="kep-N2-tba">
+            <objects>
+                <tableViewController id="r3M-8g-edH" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wqE-UY-Jh1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yMY-E5-1UC">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMY-E5-1UC" id="oc8-16-e23">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r3M-8g-edH" id="W2d-OD-e74"/>
+                            <outlet property="delegate" destination="r3M-8g-edH" id="4zX-Bx-d4d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZR1-sW-dkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="595"/>
         </scene>
     </scenes>
     <resources>
