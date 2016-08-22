@@ -1,27 +1,21 @@
 //
-//  MainContentViewCell.swift
+//  PokemonTableViewCell.swift
 //  PokeCP
 //
-//  Created by Liguo Jiao on 16/8/19.
+//  Created by Liguo Jiao on 16/8/21.
 //  Copyright © 2016年 Liguo Jiao. All rights reserved.
 //
 
 import UIKit
 
-class MainContentViewCell: UITableViewCell {
+class PokemonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.fadeOut(completion: {
-            (finished: Bool) -> Void in
-            self.fadeIn()
-        })
         // Configure the view for the selected state
     }
-
 }

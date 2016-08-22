@@ -44,35 +44,24 @@
                                     <outlet property="logoImage" destination="cVM-kW-utA" id="nb0-4r-Xz1"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="contentCell" rowHeight="83" id="gV9-xR-Hed" customClass="MainContentViewCell" customModule="PokeCP" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="contentCell" textLabel="xV2-uM-kXd" rowHeight="83" style="IBUITableViewCellStyleDefault" id="gV9-xR-Hed" customClass="MainContentViewCell" customModule="PokeCP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="288" width="600" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-xR-Hed" id="Bno-8j-eRj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osI-AC-W09">
-                                            <rect key="frame" x="8" y="8" width="584" height="67"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
-                                            <state key="normal" title="Button">
-                                                <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="buttonTapped:" destination="gV9-xR-Hed" eventType="touchUpInside" id="XMT-aA-Yye"/>
-                                            </connections>
-                                        </button>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xV2-uM-kXd">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="82.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                            <color key="textColor" red="1" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="osI-AC-W09" firstAttribute="top" secondItem="Bno-8j-eRj" secondAttribute="topMargin" id="ChY-KO-7gQ"/>
-                                        <constraint firstItem="osI-AC-W09" firstAttribute="leading" secondItem="Bno-8j-eRj" secondAttribute="leadingMargin" id="cvJ-bn-eAt"/>
-                                        <constraint firstItem="osI-AC-W09" firstAttribute="trailing" secondItem="Bno-8j-eRj" secondAttribute="trailingMargin" id="iab-kf-tDb"/>
-                                        <constraint firstItem="osI-AC-W09" firstAttribute="bottom" secondItem="Bno-8j-eRj" secondAttribute="bottomMargin" id="q31-y7-VvQ"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="contentButton" destination="osI-AC-W09" id="7js-ks-EYe"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,24 +72,35 @@
                     <navigationItem key="navigationItem" id="uCS-Da-9dv"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="r3M-8g-edH" kind="presentation" id="Ibi-fw-UAq"/>
+                        <segue destination="OHS-6W-Xw6" kind="presentation" identifier="showCPCalculator" modalPresentationStyle="formSheet" id="Ibi-fw-UAq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cf-11-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="595"/>
         </scene>
-        <!--Table View Controller-->
+        <!--View Controller-->
         <scene sceneID="kep-N2-tba">
             <objects>
-                <tableViewController id="r3M-8g-edH" sceneMemberID="viewController">
+                <tableViewController id="r3M-8g-edH" customClass="CPViewController" customModule="PokeCP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wqE-UY-Jh1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Pokemons" id="OYv-fR-0RX">
+                            <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="r3M-8g-edH" id="fK9-Cq-Y7k"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yMY-E5-1UC">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokemonNameCell" id="yMY-E5-1UC" customClass="PokemonTableViewCell" customModule="PokeCP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMY-E5-1UC" id="oc8-16-e23">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -113,8 +113,40 @@
                             <outlet property="delegate" destination="r3M-8g-edH" id="4zX-Bx-d4d"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="61L-tP-qbs"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="MfO-2Q-mto" id="oVT-1A-SW9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZR1-sW-dkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="MfO-2Q-mto">
+                    <connections>
+                        <outlet property="delegate" destination="r3M-8g-edH" id="VpS-uq-X6K"/>
+                        <outlet property="searchBar" destination="OYv-fR-0RX" id="lOS-At-iDr"/>
+                        <outlet property="searchContentsController" destination="r3M-8g-edH" id="OhH-9v-W9v"/>
+                        <outlet property="searchResultsDataSource" destination="r3M-8g-edH" id="sqf-aQ-XkV"/>
+                        <outlet property="searchResultsDelegate" destination="r3M-8g-edH" id="stS-Ja-vVa"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2483" y="595"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vFw-2d-GoY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OHS-6W-Xw6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ay9-xo-cPA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r3M-8g-edH" kind="relationship" relationship="rootViewController" id="xX7-DA-a1N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQQ-jf-Zmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1671" y="595"/>
         </scene>
