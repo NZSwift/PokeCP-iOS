@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LUn-0K-fNc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LUn-0K-fNc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRK-ol-9wx" id="T6D-5M-UrS">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="260"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
@@ -35,9 +35,18 @@
                                         <constraint firstAttribute="topMargin" secondItem="cVM-kW-utA" secondAttribute="top" id="Ihn-4b-Yph"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="centerY" secondItem="T6D-5M-UrS" secondAttribute="centerY" id="OC6-5C-1Dv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cVM-kW-utA" secondAttribute="bottom" id="Vwm-Z6-QJP"/>
+                                        <constraint firstItem="cVM-kW-utA" firstAttribute="top" secondItem="T6D-5M-UrS" secondAttribute="topMargin" id="X0L-IN-iih"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="width" relation="greaterThanOrEqual" secondItem="T6D-5M-UrS" secondAttribute="width" constant="-275" id="ehv-BO-a6A"/>
+                                        <constraint firstItem="cVM-kW-utA" firstAttribute="centerY" secondItem="T6D-5M-UrS" secondAttribute="centerY" id="f9m-Wz-zbx"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="centerX" secondItem="T6D-5M-UrS" secondAttribute="centerX" constant="1" id="z7n-7E-RxB"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Ihn-4b-Yph"/>
+                                            <exclude reference="OC6-5C-1Dv"/>
+                                            <exclude reference="Vwm-Z6-QJP"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -48,11 +57,11 @@
                                 <rect key="frame" x="0.0" y="288" width="600" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-xR-Hed" id="Bno-8j-eRj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xV2-uM-kXd">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="82.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="570" height="82"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
@@ -103,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="116" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMY-E5-1UC" id="oc8-16-e23">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
