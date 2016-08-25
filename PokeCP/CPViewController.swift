@@ -90,7 +90,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             pokemon = self.pokemonList[indexPath.row]
         }
         cell.textLabel?.text = pokemon.name
-        cell.imageView?.image = UIImage(named: "HeaderLogo")
+        cell.imageView?.image = UIImage(named: "\(pokemon.name)")
         return cell
     }
     
@@ -113,7 +113,8 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 return
             }
             let haha = Int(inputField.text ?? "0")
-            print(haha)
+            let result = (pokemon.nextGeneration?.low)! * Float(haha!)
+            print(Int(result))
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }
