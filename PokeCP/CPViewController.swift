@@ -103,6 +103,11 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             pokemon = self.pokemonList[indexPath.row]
         }
         let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
+        let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
+        imageView.image = UIImage(named: "HeaderLogo")
+        
+        modifyAlertView(alert, backgroundColor: UIColor.blackColor(), textColor: UIColor.whiteColor(), buttonColor: UIColor.cyanColor())
+        alert.view.addSubview(imageView)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.placeholder = "Enter your pokemon CP"
             textField.delegate = self
@@ -117,6 +122,45 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             print(Int(result))
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func modifyAlertView(alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
+        let subview = alert.view.subviews.first! as UIView
+        let view = subview.subviews.first! as UIView
+
+        view.backgroundColor = backgroundColor
+        view.layer.cornerRadius = 10.0
+        
+        // set color to UILabel font
+        setSubviewLabelsToTextColor(textColor, view: view)
+        
+        // set font to alert via KVC, otherwise it'll get overwritten
+        let titleAttributed = NSMutableAttributedString(
+            string: alert.title!,
+            attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(17)])
+        alert.setValue(titleAttributed, forKey: "attributedTitle")
+        
+        
+        let messageAttributed = NSMutableAttributedString(
+            string: alert.message!,
+            attributes: [NSFontAttributeName:UIFont.systemFontOfSize(13)])
+        alert.setValue(messageAttributed, forKey: "attributedMessage")
+        
+        
+        // set the buttons to non-blue, if we have buttons
+        if let buttonColor = buttonColor {
+            alert.view.tintColor = buttonColor
+        }
+    }
+    
+    func setSubviewLabelsToTextColor(textColor: UIColor, view:UIView) {
+        for subview in view.subviews {
+            if let label = subview as? UILabel {
+                label.textColor = textColor
+            } else {
+                setSubviewLabelsToTextColor(textColor, view: subview)
+            }
+        }
     }
     
     // MARK: Segueway
