@@ -11,19 +11,18 @@ import UIKit
 class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearchBarDelegate, UITextFieldDelegate {
     var pokemonList = [Pokemon]()
     var filtedPokemonList = [Pokemon]()
-
-    func textField(textField: UITextField,
-                   shouldChangeCharactersInRange range: NSRange,
-                                                 replacementString string: String) -> Bool {
+    var pokemon : Pokemon?
+    var inputCP: Int = 0
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         // Create an `NSCharacterSet` set which includes everything *but* the digits
-        let inverseSet = NSCharacterSet(charactersInString:"0123456789.").invertedSet
+        let inverseSet = NSCharacterSet(charactersInString:"0123456789").invertedSet
         
         // At every character in this "inverseSet" contained in the string,
         // split the string up into components which exclude the characters
         // in this inverse set
         let components = string.componentsSeparatedByCharactersInSet(inverseSet)
-        
+
         // Rejoin these components
         let filtered = components.joinWithSeparator("")  // use join("", components) if you are using Swift 1.2
         
@@ -38,9 +37,40 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         super.viewDidLoad()
         
         pokemonList = pokemons
+        self.view.backgroundColor = PCPColorBackground
+        self.tableView.separatorColor = UIColor.whiteColor()
+        self.tableView.backgroundView = nil
+        
+        self.searchDisplayController?.searchBar.barTintColor = PCPColorNavigationCyan
+        self.searchDisplayController?.searchBar.backgroundColor = UIColor.clearColor()
+        self.searchDisplayController?.searchBar.tintColor = UIColor.whiteColor()
+        self.searchDisplayController?.searchBar.searchBarStyle = UISearchBarStyle.Minimal
+        self.searchDisplayController?.searchResultsTableView.backgroundColor = PCPColorBackground
+        if let searchField = self.searchDisplayController?.searchBar.valueForKey("_searchField") as? UITextField  {
+            if searchField.respondsToSelector(Selector("setAttributedPlaceholder:")) {
+                let placeholder = "Search"
+                let attributedString = NSMutableAttributedString(string: placeholder)
+                let range = NSRange(location: 0, length: placeholder.characters.count)
+                let color = UIColor(white: 1.0, alpha: 0.7)
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "AvenirNext-Medium", size: 15)!, range: range)
+                searchField.attributedPlaceholder = attributedString
+                
+                searchField.clearButtonMode = UITextFieldViewMode.WhileEditing
+                searchField.textColor = .whiteColor()
+            }
+        }
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
         tableView.reloadData()
         self.title = "CP Calculator"
         self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.view.tintColor = PCPColorNavigationCyan
     }
     
     func back() {
@@ -94,20 +124,35 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         return cell
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = PCPColorBackground
+        cell.textLabel?.textColor = PCPColorContentGray       
+        cell.imageView?.layer.cornerRadius = 30/2
+        cell.imageView?.layer.borderWidth = 1
+        cell.imageView?.layer.masksToBounds = false
+        cell.imageView?.layer.borderColor = PCPColorContent.CGColor
+        cell.imageView?.clipsToBounds = true
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let pokemon : Pokemon
+        
         if tableView == self.searchDisplayController?.searchResultsTableView {
             pokemon = self.filtedPokemonList[indexPath.row]
         } else {
             pokemon = self.pokemonList[indexPath.row]
         }
+        
         let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
         let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
         imageView.image = UIImage(named: "HeaderLogo")
-        
-        modifyAlertView(alert, backgroundColor: UIColor.blackColor(), textColor: UIColor.whiteColor(), buttonColor: UIColor.cyanColor())
         alert.view.addSubview(imageView)
+        
+        let pokemonImageView = UIImageView(frame: CGRectMake(0, 10, 60, 50))
+        imageView.image = UIImage(named: "\(pokemon!.name)")
+        alert.view.addSubview(pokemonImageView)
+
+        modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.whiteColor(), buttonColor: PCPColorNavigationCyan)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.placeholder = "Enter your pokemon CP"
             textField.delegate = self
@@ -117,10 +162,11 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             guard let inputField = alert.textFields![0] as? UITextField else {
                 return
             }
-            let haha = Int(inputField.text ?? "0")
-            let result = (pokemon.nextGeneration?.low)! * Float(haha!)
-            print(Int(result))
+            self.performSegueWithIdentifier("pokeDetails", sender: self)
+            self.inputCP = Int(inputField.text ?? "0") ?? 0
+            //let result = (self.pokemon!.nextGeneration?.low)! * Float(haha!)
         }))
+        
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -139,7 +185,6 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             string: alert.title!,
             attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(17)])
         alert.setValue(titleAttributed, forKey: "attributedTitle")
-        
         
         let messageAttributed = NSMutableAttributedString(
             string: alert.message!,
@@ -166,6 +211,12 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     // MARK: Segueway
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "pokeDetails" {
+            guard let destinationVController = segue.destinationViewController as? CPDetailsViewController else {
+                return
+            }
+            destinationVController.pokemon = pokemon
+            destinationVController.cpInput = inputCP
+        }
     }
 }

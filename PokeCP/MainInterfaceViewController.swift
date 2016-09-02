@@ -13,6 +13,8 @@ class MainInterfaceViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        self.view.backgroundColor = PCPColorBackground
+        self.tableView.separatorColor = UIColor.clearColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +88,6 @@ class MainInterfaceViewController: UITableViewController {
         }
     }
 
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -94,7 +95,11 @@ class MainInterfaceViewController: UITableViewController {
             }
         }
     }
-
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = PCPColorBackground
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
