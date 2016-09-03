@@ -10,11 +10,14 @@ import UIKit
 
 class CPDInfoViewCell: UITableViewCell {
 
-    
+    @IBOutlet var candyLabel: UILabel!
+    @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var cpLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

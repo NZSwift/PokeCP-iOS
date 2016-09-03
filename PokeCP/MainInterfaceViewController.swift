@@ -33,7 +33,7 @@ class MainInterfaceViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            return 5
+            return 6
         }
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -48,7 +48,7 @@ class MainInterfaceViewController: UITableViewController {
                 }
             }
         } else {
-            if indexPath.row % 2 == 0 {
+            if indexPath.row % 2 == 1 {
                 // content cell
                 if Device.isIphone  {
                     return 70
@@ -73,8 +73,7 @@ class MainInterfaceViewController: UITableViewController {
             }
             return cell
         } else {
-
-            if indexPath.row % 2 == 0 {
+            if indexPath.row % 2 == 1 {
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("contentCell", forIndexPath: indexPath) as? MainContentViewCell else {
                     return UITableViewCell()
                 }
@@ -90,7 +89,7 @@ class MainInterfaceViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
-            if indexPath.row == 0 {
+            if indexPath.row == 1 {
                 self.performSegueWithIdentifier("showCPCalculator", sender: self)
             }
         }

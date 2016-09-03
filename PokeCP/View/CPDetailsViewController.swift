@@ -11,6 +11,7 @@ import UIKit
 class CPDetailsViewController: UITableViewController {
     var pokemon: Pokemon?
     var cpInput: Int?
+    let displayCellContent: NSArray = []
     override func viewDidLoad() {
         print(pokemon?.name)
         print(cpInput)
@@ -27,12 +28,17 @@ class CPDetailsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        } else {
+            
+            return 2
+        }
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 192
+            return 330
         } else {
             return 110
         }
@@ -44,11 +50,15 @@ class CPDetailsViewController: UITableViewController {
             if let imageName = pokemon?.name {
                 cell?.pokemonHeadImage.image = UIImage(named: "\(imageName)")
             }
+            cell?.nameLabel.text = pokemon?.name
             cell?.selectionStyle = UITableViewCellSelectionStyle.None
             return cell!
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell
-            return cell!
+            guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+           // displayCellContent
         }
     }
 }
