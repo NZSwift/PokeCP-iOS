@@ -13,6 +13,8 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     var filtedPokemonList = [Pokemon]()
     var pokemon : Pokemon?
     var inputCP: Int = 0
+    var viewType: Int = 0 //0: CP Calculator, 1: Username Check, 2, About me
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let inverseSet = NSCharacterSet(charactersInString:"0123456789").invertedSet
         let components = string.componentsSeparatedByCharactersInSet(inverseSet)
@@ -27,7 +29,20 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.whiteColor()
         self.tableView.backgroundView = nil
-        
+        if viewType == 0 {
+            searchBar(true)
+        } else if viewType == 2 {
+            searchBar(false)
+        }
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
+        tableView.reloadData()
+        self.title = "CP Calculator"
+        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
+    }
+    
+    private func searchBar(display: Bool) {
+        self.searchDisplayController?.searchBar.hidden = !display
         self.searchDisplayController?.searchBar.barTintColor = PCPColorNavigationCyan
         self.searchDisplayController?.searchBar.backgroundColor = UIColor.clearColor()
         self.searchDisplayController?.searchBar.tintColor = UIColor.whiteColor()
@@ -47,12 +62,6 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 searchField.textColor = .whiteColor()
             }
         }
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
-        tableView.reloadData()
-        self.title = "CP Calculator"
-        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
     }
     
     override func viewWillLayoutSubviews() {
@@ -96,19 +105,31 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCellWithIdentifier("pokemonNameCell") as? PokemonTableViewCell else {
+        switch viewType {
+        case 0:
+            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("pokemonNameCell") as? PokemonTableViewCell else {
+                return UITableViewCell()
+            }
+            var pokemon : Pokemon
+            
+            if tableView == self.searchDisplayController?.searchResultsTableView {
+                pokemon = self.filtedPokemonList[indexPath.row]
+            } else {
+                pokemon = self.pokemonList[indexPath.row]
+            }
+            cell.textLabel?.text = pokemon.name
+            cell.imageView?.image = UIImage(named: "\(pokemon.name)")
+            return cell
+        case 1:
+            return UITableViewCell()
+        case 2:
+            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("aboutMe") as? AboutMeTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        default:
             return UITableViewCell()
         }
-        var pokemon : Pokemon
-        
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            pokemon = self.filtedPokemonList[indexPath.row]
-        } else {
-            pokemon = self.pokemonList[indexPath.row]
-        }
-        cell.textLabel?.text = pokemon.name
-        cell.imageView?.image = UIImage(named: "\(pokemon.name)")
-        return cell
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

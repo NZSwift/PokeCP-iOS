@@ -88,7 +88,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cf-11-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="595"/>
+            <point key="canvasLocation" x="882" y="431"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kep-N2-tba">
@@ -130,7 +130,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutUs" id="fvI-wc-lFl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutMe" id="fvI-wc-lFl" customClass="AboutMeTableViewCell" customModule="PokeCP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="204" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fvI-wc-lFl" id="vh9-yy-uiZ">
@@ -162,7 +162,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2483" y="595"/>
+            <point key="canvasLocation" x="1627" y="1143"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="uOv-8b-eFC">
@@ -211,7 +211,7 @@
                                     <outlet property="pokemonHeadImage" destination="gPv-aV-vTD" id="OyJ-pi-9L1"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonEvoInfo" rowHeight="110" id="iRg-RY-qhh" customClass="CPDInfoViewCell" customModule="PokeCP" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PokemonEvoInfo" rowHeight="110" id="iRg-RY-qhh" customClass="CPDInfoViewCell" customModule="PokeCP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="402" width="600" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iRg-RY-qhh" id="3Pv-Po-qyH">
@@ -275,7 +275,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fA-hC-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3146" y="596"/>
+            <point key="canvasLocation" x="882" y="1181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vFw-2d-GoY">
@@ -295,7 +295,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQQ-jf-Zmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="595"/>
+            <point key="canvasLocation" x="1627" y="431"/>
         </scene>
     </scenes>
     <resources>

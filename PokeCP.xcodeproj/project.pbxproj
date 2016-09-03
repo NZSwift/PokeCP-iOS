@@ -15,6 +15,7 @@
 		0517B3641D66DD920015CDFA /* PokeCPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B3631D66DD920015CDFA /* PokeCPTests.swift */; };
 		0517B36F1D66DD920015CDFA /* PokeCPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0517B36E1D66DD920015CDFA /* PokeCPUITests.swift */; };
 		051B19C91D6703F3002E726E /* ExtentionUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B19C81D6703F3002E726E /* ExtentionUnits.swift */; };
+		051F57481D7AF35D0062B49D /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051F57471D7AF35D0062B49D /* AboutMeTableViewCell.swift */; };
 		0563EBA01D69448D00AF286F /* MainInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EB9F1D69448D00AF286F /* MainInterfaceViewController.swift */; };
 		0563EBA41D6944C400AF286F /* logoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA21D6944C400AF286F /* logoViewCell.swift */; };
 		0563EBA51D6944C400AF286F /* MainContentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA31D6944C400AF286F /* MainContentViewCell.swift */; };
@@ -61,6 +62,7 @@
 		0517B36E1D66DD920015CDFA /* PokeCPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCPUITests.swift; sourceTree = "<group>"; };
 		0517B3701D66DD920015CDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		051B19C81D6703F3002E726E /* ExtentionUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionUnits.swift; sourceTree = "<group>"; };
+		051F57471D7AF35D0062B49D /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
 		0563EB9F1D69448D00AF286F /* MainInterfaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceViewController.swift; sourceTree = "<group>"; };
 		0563EBA21D6944C400AF286F /* logoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoViewCell.swift; sourceTree = "<group>"; };
 		0563EBA31D6944C400AF286F /* MainContentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				0563EBAA1D696FAB00AF286F /* PokemonTableViewCell.swift */,
 				E65022BC1D791C390016D16B /* CPDImageViewCell.swift */,
 				E65022BE1D791C700016D16B /* CPDInfoViewCell.swift */,
+				051F57471D7AF35D0062B49D /* AboutMeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				E65022BB1D7916860016D16B /* CPDetailsViewController.swift in Sources */,
 				0517B34C1D66DD920015CDFA /* AppDelegate.swift in Sources */,
 				0563EBA01D69448D00AF286F /* MainInterfaceViewController.swift in Sources */,
+				051F57481D7AF35D0062B49D /* AboutMeTableViewCell.swift in Sources */,
 				0563EBA41D6944C400AF286F /* logoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

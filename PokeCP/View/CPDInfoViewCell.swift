@@ -17,7 +17,12 @@ class CPDInfoViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        candyLabel.text = ""
+        typeLabel.text = ""
+        cpLabel.text = ""
+        candyLabel.textColor = UIColor.whiteColor()
+        typeLabel.textColor = UIColor.whiteColor()
+        cpLabel.textColor = UIColor.whiteColor()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

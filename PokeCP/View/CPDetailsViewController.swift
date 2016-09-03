@@ -11,12 +11,14 @@ import UIKit
 class CPDetailsViewController: UITableViewController {
     var pokemon: Pokemon?
     var cpInput: Int?
-    let displayCellContent: NSArray = []
+    var displayCellContent: NSArray = []
+
     override func viewDidLoad() {
         print(pokemon?.name)
         print(cpInput)
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.clearColor()
+        displayCellContent = []
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -31,7 +33,6 @@ class CPDetailsViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            
             return 2
         }
     }
@@ -57,8 +58,18 @@ class CPDetailsViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
                 return UITableViewCell()
             }
+            if indexPath.row == 0 {
+                cell.candyLabel.text = "Candy: \n\(pokemon?.candy ?? 0)"
+                cell.cpLabel.text = "Min CP: \n\(pokemon?.low ?? 0)\nMax CP: \n\(pokemon?.high ?? 0)"
+                cell.typeLabel.text = "Type: \n\(pokemon?.type ?? "")"
+            } else {
+                cell.candyLabel.backgroundColor = PCPColorNavigationCyan
+                cell.typeLabel.backgroundColor = PCPColorNavigationCyan
+                cell.cpLabel.backgroundColor = PCPColorNavigationCyan
+                cell.typeLabel.text = "Max Power: \n\(pokemon?.maxIndex ?? 0)"
+            }
+            
             return cell
-           // displayCellContent
         }
     }
 }
