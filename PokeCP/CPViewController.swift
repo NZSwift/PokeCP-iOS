@@ -170,8 +170,9 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             guard let inputField = alert.textFields![0] as? UITextField else {
                 return
             }
-            self.performSegueWithIdentifier("pokeDetails", sender: self)
             self.inputCP = Int(inputField.text ?? "0") ?? 0
+            self.performSegueWithIdentifier("pokeDetails", sender: self)
+
         }))
         self.presentViewController(alert, animated: true, completion: nil)
     }

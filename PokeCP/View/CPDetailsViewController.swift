@@ -60,7 +60,7 @@ class CPDetailsViewController: UITableViewController {
             }
             if indexPath.row == 0 {
                 cell.candyLabel.text = "Candy: \n\(pokemon?.candy ?? 0)"
-                cell.cpLabel.text = "Min CP: \n\(pokemon?.low ?? 0)\nMax CP: \n\(pokemon?.high ?? 0)"
+                cell.cpLabel.text = "Min CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.low ?? 1.0))\nMax CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.high ?? 1.0))"
                 cell.typeLabel.text = "Type: \n\(pokemon?.type ?? "")"
             } else {
                 cell.candyLabel.backgroundColor = PCPColorNavigationCyan
@@ -71,5 +71,10 @@ class CPDetailsViewController: UITableViewController {
             
             return cell
         }
+    }
+    
+    private func CPCalculation(input: Int, index: Float) -> Int{
+        let result = Int(round(Float(input) * (1 + index)))
+        return result
     }
 }
