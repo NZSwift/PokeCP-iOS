@@ -9,10 +9,13 @@
 import UIKit
 
 class MainInterfaceViewController: UITableViewController {
-    let buttons = ["CP Calculator", "Username Check", "About us"]
+    let buttons = ["CP Calculator", "Username Check", "About me"]
+    var destinationVCIndex: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        self.view.backgroundColor = PCPColorBackground
+        self.tableView.separatorColor = UIColor.clearColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +34,7 @@ class MainInterfaceViewController: UITableViewController {
         if section == 0 {
             return 1
         } else {
-            return 5
+            return 6
         }
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -46,7 +49,7 @@ class MainInterfaceViewController: UITableViewController {
                 }
             }
         } else {
-            if indexPath.row % 2 == 0 {
+            if indexPath.row % 2 == 1 {
                 // content cell
                 if Device.isIphone  {
                     return 70
@@ -71,8 +74,7 @@ class MainInterfaceViewController: UITableViewController {
             }
             return cell
         } else {
-
-            if indexPath.row % 2 == 0 {
+            if indexPath.row % 2 == 1 {
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("contentCell", forIndexPath: indexPath) as? MainContentViewCell else {
                     return UITableViewCell()
                 }
@@ -86,57 +88,34 @@ class MainInterfaceViewController: UITableViewController {
         }
     }
 
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                self.performSegueWithIdentifier("showCPCalculator", sender: self)
-            }
+            destinationVCIndex = indexPath.row
+            self.performSegueWithIdentifier("showCPCalculator", sender: self)
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = PCPColorBackground
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationNavVC = segue.destinationViewController as? UINavigationController,
+            let vc = destinationNavVC.topViewController as? CPViewController {
+            
+            if destinationVCIndex == 1 {
+                vc.viewType = 0
+            } else if destinationVCIndex == 3 {
+                vc.viewType = 1
+            } else if destinationVCIndex == 5 {
+                vc.viewType = 2
+            }
+        }
     }
  
 

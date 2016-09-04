@@ -8,6 +8,16 @@
 
 import UIKit
 
+let PCPColorBackground = UIColor(red: 47.0 / 255.0, green: 59.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
+let PCPColorContent = UIColor(red: 65.0 / 255.0, green: 210.0 / 255.0, blue: 248.0 / 255.0, alpha: 1.0)
+let PCPColorContentGray = UIColor(red: 179.0 / 255.0, green: 199.0 / 255.0, blue: 205.0 / 255.0, alpha: 1.0)
+let PCPColorNavigationCyan = UIColor(red: 78.0 / 255.0, green: 185.0 / 255.0, blue: 171.0 / 255.0, alpha: 1.0)
+
+let PCPColorRed = UIColor(red: 233.0 / 255.0, green: 100.0 / 255.0, blue: 103.0 / 255.0, alpha: 1.0)
+let PCPColorBlue = UIColor(red: 60.0 / 255.0 , green: 160.0 / 255.0, blue: 196.0 / 255.0, alpha: 1.0)
+let PCPColorAmber = UIColor(red: 244.0 / 255.0, green: 161.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
+
+
 // MARK: - Device
 public class Device {
     public class var isIpad:Bool {

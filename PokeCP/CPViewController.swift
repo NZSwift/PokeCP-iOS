@@ -11,36 +11,62 @@ import UIKit
 class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearchBarDelegate, UITextFieldDelegate {
     var pokemonList = [Pokemon]()
     var filtedPokemonList = [Pokemon]()
-
-    func textField(textField: UITextField,
-                   shouldChangeCharactersInRange range: NSRange,
-                                                 replacementString string: String) -> Bool {
-        
-        // Create an `NSCharacterSet` set which includes everything *but* the digits
-        let inverseSet = NSCharacterSet(charactersInString:"0123456789.").invertedSet
-        
-        // At every character in this "inverseSet" contained in the string,
-        // split the string up into components which exclude the characters
-        // in this inverse set
+    var pokemon : Pokemon?
+    var inputCP: Int = 0
+    var viewType: Int = 0 //0: CP Calculator, 1: Username Check, 2, About me
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let inverseSet = NSCharacterSet(charactersInString:"0123456789").invertedSet
         let components = string.componentsSeparatedByCharactersInSet(inverseSet)
-        
-        // Rejoin these components
-        let filtered = components.joinWithSeparator("")  // use join("", components) if you are using Swift 1.2
-        
-        // If the original string is equal to the filtered string, i.e. if no
-        // inverse characters were present to be eliminated, the input is valid
-        // and the statement returns true; else it returns false
+        let filtered = components.joinWithSeparator("")
         return string == filtered
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pokemonList = pokemons
+        self.view.backgroundColor = PCPColorBackground
+        self.tableView.separatorColor = UIColor.whiteColor()
+        self.tableView.backgroundView = nil
+        if viewType == 0 {
+            searchBar(true)
+        } else if viewType == 2 {
+            searchBar(false)
+        }
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
         tableView.reloadData()
         self.title = "CP Calculator"
         self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
+    }
+    
+    private func searchBar(display: Bool) {
+        self.searchDisplayController?.searchBar.hidden = !display
+        self.searchDisplayController?.searchBar.barTintColor = PCPColorNavigationCyan
+        self.searchDisplayController?.searchBar.backgroundColor = UIColor.clearColor()
+        self.searchDisplayController?.searchBar.tintColor = UIColor.whiteColor()
+        self.searchDisplayController?.searchBar.searchBarStyle = UISearchBarStyle.Minimal
+        self.searchDisplayController?.searchResultsTableView.backgroundColor = PCPColorBackground
+        if let searchField = self.searchDisplayController?.searchBar.valueForKey("_searchField") as? UITextField  {
+            if searchField.respondsToSelector(Selector("setAttributedPlaceholder:")) {
+                let placeholder = "Search"
+                let attributedString = NSMutableAttributedString(string: placeholder)
+                let range = NSRange(location: 0, length: placeholder.characters.count)
+                let color = UIColor(white: 1.0, alpha: 0.7)
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
+                attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "AvenirNext-Medium", size: 15)!, range: range)
+                searchField.attributedPlaceholder = attributedString
+                
+                searchField.clearButtonMode = UITextFieldViewMode.WhileEditing
+                searchField.textColor = .whiteColor()
+            }
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.view.tintColor = PCPColorNavigationCyan
     }
     
     func back() {
@@ -79,30 +105,62 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCellWithIdentifier("pokemonNameCell") as? PokemonTableViewCell else {
+        switch viewType {
+        case 0:
+            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("pokemonNameCell") as? PokemonTableViewCell else {
+                return UITableViewCell()
+            }
+            var pokemon : Pokemon
+            
+            if tableView == self.searchDisplayController?.searchResultsTableView {
+                pokemon = self.filtedPokemonList[indexPath.row]
+            } else {
+                pokemon = self.pokemonList[indexPath.row]
+            }
+            cell.textLabel?.text = pokemon.name
+            cell.imageView?.image = UIImage(named: "\(pokemon.name)")
+            return cell
+        case 1:
+            return UITableViewCell()
+        case 2:
+            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("aboutMe") as? AboutMeTableViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        default:
             return UITableViewCell()
         }
-        var pokemon : Pokemon
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = PCPColorBackground
+        cell.textLabel?.textColor = PCPColorContentGray       
+        cell.imageView?.layer.cornerRadius = 30/2
+        cell.imageView?.layer.borderWidth = 2
+        cell.imageView?.layer.masksToBounds = false
+        cell.imageView?.layer.borderColor = PCPColorContent.CGColor
+        cell.imageView?.clipsToBounds = true
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if tableView == self.searchDisplayController?.searchResultsTableView {
             pokemon = self.filtedPokemonList[indexPath.row]
         } else {
             pokemon = self.pokemonList[indexPath.row]
         }
-        cell.textLabel?.text = pokemon.name
-        cell.imageView?.image = UIImage(named: "HeaderLogo")
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let pokemon : Pokemon
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            pokemon = self.filtedPokemonList[indexPath.row]
-        } else {
-            pokemon = self.pokemonList[indexPath.row]
-        }
+        
         let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
+        let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
+        imageView.image = UIImage(named: "HeaderLogo")
+        alert.view.addSubview(imageView)
+        
+        let pokemonImageView = UIImageView(frame: CGRectMake(0, 10, 60, 50))
+        imageView.image = UIImage(named: "\(pokemon!.name)")
+        alert.view.addSubview(pokemonImageView)
+
+        modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.whiteColor(), buttonColor: PCPColorNavigationCyan)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.placeholder = "Enter your pokemon CP"
             textField.delegate = self
@@ -112,15 +170,59 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             guard let inputField = alert.textFields![0] as? UITextField else {
                 return
             }
-            let haha = Int(inputField.text ?? "0")
-            print(haha)
+            self.inputCP = Int(inputField.text ?? "0") ?? 0
+            self.performSegueWithIdentifier("pokeDetails", sender: self)
+
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func modifyAlertView(alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
+        let subview = alert.view.subviews.first! as UIView
+        let view = subview.subviews.first! as UIView
+
+        view.backgroundColor = backgroundColor
+        view.layer.cornerRadius = 10.0
+        
+        // set color to UILabel font
+        setSubviewLabelsToTextColor(textColor, view: view)
+        
+        // set font to alert via KVC, otherwise it'll get overwritten
+        let titleAttributed = NSMutableAttributedString(
+            string: alert.title!,
+            attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(17)])
+        alert.setValue(titleAttributed, forKey: "attributedTitle")
+        
+        let messageAttributed = NSMutableAttributedString(
+            string: alert.message!,
+            attributes: [NSFontAttributeName:UIFont.systemFontOfSize(13)])
+        alert.setValue(messageAttributed, forKey: "attributedMessage")
+
+        // set the buttons to non-blue, if we have buttons
+        if let buttonColor = buttonColor {
+            alert.view.tintColor = buttonColor
+        }
+    }
+    
+    func setSubviewLabelsToTextColor(textColor: UIColor, view:UIView) {
+        for subview in view.subviews {
+            if let label = subview as? UILabel {
+                label.textColor = textColor
+            } else {
+                setSubviewLabelsToTextColor(textColor, view: subview)
+            }
+        }
     }
     
     // MARK: Segueway
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "pokeDetails" {
+            guard let destinationVController = segue.destinationViewController as? CPDetailsViewController else {
+                return
+            }
+            destinationVController.pokemon = pokemon
+            destinationVController.cpInput = inputCP
+        }
     }
 }
