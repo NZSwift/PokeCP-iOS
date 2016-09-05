@@ -119,6 +119,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             }
             cell.textLabel?.text = pokemon.name
             cell.imageView?.image = UIImage(named: "\(pokemon.name)")
+            
             return cell
         case 1:
             return UITableViewCell()

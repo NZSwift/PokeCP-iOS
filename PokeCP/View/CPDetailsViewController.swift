@@ -12,13 +12,15 @@ class CPDetailsViewController: UITableViewController {
     var pokemon: Pokemon?
     var cpInput: Int?
     var displayCellContent: NSArray = []
-
+    var pokemonGenerationList = [Pokemon]()
+    
     override func viewDidLoad() {
         print(pokemon?.name)
         print(cpInput)
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.clearColor()
         displayCellContent = []
+        getAllGenerationInList(pokemon)
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -33,7 +35,7 @@ class CPDetailsViewController: UITableViewController {
         if section == 0 {
             return 3
         } else {
-            return 2
+            return pokemonGenerationList.count
         }
     }
 
@@ -92,9 +94,12 @@ class CPDetailsViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("NextGeneration", forIndexPath: indexPath) as? CPDNextGenerationViewCell else {
                 return emptyCell
             }
-            cell.imageView?.image = UIImage(named: "\(pokemon?.name)")
-            cell.textLabel?.text = "hehe"
-            cell.detailTextLabel?.text = "haha"
+
+            cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[indexPath.row].name)")
+            //cell.imageView?.contentMode = .ScaleAspectFit
+        
+            cell.name.text = "\(pokemonGenerationList[indexPath.row].name)"
+            cell.generationNumber.text = "\((indexPath.row+2).ordinal())"
             return cell
         }
     }
@@ -102,5 +107,30 @@ class CPDetailsViewController: UITableViewController {
     private func CPCalculation(input: Int, index: Float) -> Int{
         let result = Int(round(Float(input) * (1 + index)))
         return result
+    }
+    
+    private func getAllGeneration(sourcePokemon:Pokemon) {
+        if sourcePokemon.nextGeneration == nil {
+            return
+        } else {
+            pokemonGenerationList.append(sourcePokemon.nextGeneration!)
+            getAllGeneration(sourcePokemon.nextGeneration!)
+        }
+    }
+    
+    private func getAllGenerationInList(currentPokemon: Pokemon?) {
+        guard let pkm = currentPokemon else {
+            return
+        }
+        if pkm.name == "Eevee" {
+            /* Eevee is bit special it doesnt has 3rd level evolution
+                so it could deal in tableview for special case */
+            return
+        } else {
+            getAllGeneration(pkm)
+        }
+        
+
+        
     }
 }
