@@ -67,3 +67,22 @@ extension UIView {
             }, completion: completion)
     }
 }
+
+extension Int {
+    func ordinal() -> String {
+        return "\(self)\(ordinalSuffix())"
+    }
+    
+    func ordinalSuffix() -> String {
+        if (11...13).contains(self % 100) {
+            return "th"
+        }
+        switch self % 10 {
+        case 1: return "st"
+        case 2: return "nd"
+        case 3: return "rd"
+        default: return "th"
+        }
+    }
+    
+}
