@@ -31,7 +31,7 @@ class CPDetailsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return 3
         } else {
             return 2
         }
@@ -39,36 +39,62 @@ class CPDetailsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 330
+            switch indexPath.row {
+            case 0:
+                return 330
+            case 1:
+                return 110
+            case 2:
+                return 110
+            default:
+                return 0
+            }
         } else {
-            return 110
+            return 123
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let emptyCell = UITableViewCell()
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("PokemonHeadImage", forIndexPath: indexPath) as? CPDImageViewCell
-            if let imageName = pokemon?.name {
-                cell?.pokemonHeadImage.image = UIImage(named: "\(imageName)")
-            }
-            cell?.nameLabel.text = pokemon?.name
-            cell?.selectionStyle = UITableViewCellSelectionStyle.None
-            return cell!
-        } else {
-            guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
-                return UITableViewCell()
-            }
-            if indexPath.row == 0 {
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonHeadImage", forIndexPath: indexPath) as? CPDImageViewCell else {
+                    return emptyCell
+                }
+                if let imageName = pokemon?.name {
+                    cell.pokemonHeadImage.image = UIImage(named: "\(imageName)")
+                }
+                cell.nameLabel.text = pokemon?.name
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
+                    return emptyCell
+                }
                 cell.candyLabel.text = "Candy: \n\(pokemon?.candy ?? 0)"
                 cell.cpLabel.text = "Min CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.low ?? 1.0))\nMax CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.high ?? 1.0))"
                 cell.typeLabel.text = "Type: \n\(pokemon?.type ?? "")"
-            } else {
+                return cell
+            case 2:
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
+                    return emptyCell
+                }
                 cell.candyLabel.backgroundColor = PCPColorNavigationCyan
                 cell.typeLabel.backgroundColor = PCPColorNavigationCyan
                 cell.cpLabel.backgroundColor = PCPColorNavigationCyan
                 cell.typeLabel.text = "Max Power: \n\(pokemon?.maxIndex ?? 0)"
+                return cell
+            default:
+                return emptyCell
             }
-            
+        } else { // Next Generation
+            guard let cell = tableView.dequeueReusableCellWithIdentifier("NextGeneration", forIndexPath: indexPath) as? CPDNextGenerationViewCell else {
+                return emptyCell
+            }
+            cell.imageView?.image = UIImage(named: "\(pokemon?.name)")
+            cell.textLabel?.text = "hehe"
+            cell.detailTextLabel?.text = "haha"
             return cell
         }
     }
