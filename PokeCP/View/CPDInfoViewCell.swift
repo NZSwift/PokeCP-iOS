@@ -20,12 +20,12 @@ class CPDInfoViewCell: UITableViewCell {
         candyLabel.text = ""
         typeLabel.text = ""
         cpLabel.text = ""
-        candyLabel.textColor = UIColor.whiteColor()
-        typeLabel.textColor = UIColor.whiteColor()
-        cpLabel.textColor = UIColor.whiteColor()
+        candyLabel.textColor = UIColor.white
+        typeLabel.textColor = UIColor.white
+        cpLabel.textColor = UIColor.white
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

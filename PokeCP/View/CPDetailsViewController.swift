@@ -18,20 +18,20 @@ class CPDetailsViewController: UITableViewController {
         print(pokemon?.name)
         print(cpInput)
         self.view.backgroundColor = PCPColorBackground
-        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.separatorColor = UIColor.clear
         displayCellContent = []
         getAllGenerationInList(pokemon)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = PCPColorBackground
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 3
         } else {
@@ -39,9 +39,9 @@ class CPDetailsViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            switch indexPath.row {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).section == 0 {
+            switch (indexPath as NSIndexPath).row {
             case 0:
                 return 330
             case 1:
@@ -56,22 +56,22 @@ class CPDetailsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let emptyCell = UITableViewCell()
-        if indexPath.section == 0 {
-            switch indexPath.row {
+        if (indexPath as NSIndexPath).section == 0 {
+            switch (indexPath as NSIndexPath).row {
             case 0:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonHeadImage", forIndexPath: indexPath) as? CPDImageViewCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonHeadImage", for: indexPath) as? CPDImageViewCell else {
                     return emptyCell
                 }
                 if let imageName = pokemon?.name {
                     cell.pokemonHeadImage.image = UIImage(named: "\(imageName)")
                 }
                 cell.nameLabel.text = pokemon?.name
-                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.selectionStyle = UITableViewCellSelectionStyle.none
                 return cell
             case 1:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonEvoInfo", for: indexPath) as? CPDInfoViewCell else {
                     return emptyCell
                 }
                 cell.candyLabel.text = "Candy: \n\(pokemon?.candy ?? 0)"
@@ -79,7 +79,7 @@ class CPDetailsViewController: UITableViewController {
                 cell.typeLabel.text = "Type: \n\(pokemon?.type ?? "")"
                 return cell
             case 2:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("PokemonEvoInfo", forIndexPath: indexPath) as? CPDInfoViewCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonEvoInfo", for: indexPath) as? CPDInfoViewCell else {
                     return emptyCell
                 }
                 cell.candyLabel.backgroundColor = PCPColorNavigationCyan
@@ -91,23 +91,23 @@ class CPDetailsViewController: UITableViewController {
                 return emptyCell
             }
         } else { // Next Generation
-            guard let cell = tableView.dequeueReusableCellWithIdentifier("NextGeneration", forIndexPath: indexPath) as? CPDNextGenerationViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "NextGeneration", for: indexPath) as? CPDNextGenerationViewCell else {
                 return emptyCell
             }
-            cell.selectionStyle = .None
-            cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[indexPath.row].name)")
-            cell.name.text = "\(pokemonGenerationList[indexPath.row].name)"
-            cell.generationNumber.text = "\((indexPath.row+2).ordinal())"
+            cell.selectionStyle = .none
+            cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[(indexPath as NSIndexPath).row].name)")
+            cell.name.text = "\(pokemonGenerationList[(indexPath as NSIndexPath).row].name)"
+            cell.generationNumber.text = "\(((indexPath as NSIndexPath).row+2).ordinal())"
             return cell
         }
     }
     
-    private func CPCalculation(input: Int, index: Float) -> Int{
+    fileprivate func CPCalculation(_ input: Int, index: Float) -> Int{
         let result = Int(round(Float(input) * (1 + index)))
         return result
     }
     
-    private func getAllGeneration(sourcePokemon:Pokemon) {
+    fileprivate func getAllGeneration(_ sourcePokemon:Pokemon) {
         if sourcePokemon.nextGeneration == nil {
             return
         } else {
@@ -116,7 +116,7 @@ class CPDetailsViewController: UITableViewController {
         }
     }
     
-    private func getAllGenerationInList(currentPokemon: Pokemon?) {
+    fileprivate func getAllGenerationInList(_ currentPokemon: Pokemon?) {
         guard let pkm = currentPokemon else {
             return
         }

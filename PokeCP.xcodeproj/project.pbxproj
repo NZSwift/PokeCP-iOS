@@ -301,13 +301,17 @@
 				TargetAttributes = {
 					0517B3471D66DD920015CDFA = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = V7QHHUD2M5;
+						LastSwiftMigration = 0800;
 					};
 					0517B35E1D66DD920015CDFA = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0517B3471D66DD920015CDFA;
 					};
 					0517B3691D66DD920015CDFA = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 0517B3471D66DD920015CDFA;
 					};
 				};
@@ -645,11 +649,13 @@
 			baseConfigurationReference = 9DFC213FA86547EC9B999791 /* Pods-PokeCP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V7QHHUD2M5;
 				INFOPLIST_FILE = PokeCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCP;
+				PRODUCT_BUNDLE_IDENTIFIER = liguojiao.PokeCP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -658,11 +664,13 @@
 			baseConfigurationReference = F5838A2925A52B34BD455244 /* Pods-PokeCP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V7QHHUD2M5;
 				INFOPLIST_FILE = PokeCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCP;
+				PRODUCT_BUNDLE_IDENTIFIER = liguojiao.PokeCP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -675,6 +683,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeCP.app/PokeCP";
 			};
 			name = Debug;
@@ -688,6 +697,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PokeCP.app/PokeCP";
 			};
 			name = Release;
@@ -700,6 +710,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PokeCP;
 			};
 			name = Debug;
@@ -712,6 +723,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = PokeCP;
 			};
 			name = Release;

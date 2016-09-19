@@ -15,10 +15,10 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     var inputCP: Int = 0
     var viewType: Int = 0 //0: CP Calculator, 1: Username Check, 2, About me
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let inverseSet = NSCharacterSet(charactersInString:"0123456789").invertedSet
-        let components = string.componentsSeparatedByCharactersInSet(inverseSet)
-        let filtered = components.joinWithSeparator("")
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let inverseSet = CharacterSet(charactersIn:"0123456789").inverted
+        let components = string.components(separatedBy: inverseSet)
+        let filtered = components.joined(separator: "")
         return string == filtered
     }
     
@@ -27,19 +27,19 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         
         pokemonList = pokemons
         self.view.backgroundColor = PCPColorBackground
-        self.tableView.separatorColor = UIColor.whiteColor()
+        self.tableView.separatorColor = UIColor.white
         self.tableView.backgroundView = nil
         if viewType == 0 {
             searchBar(true)
         } else if viewType == 2 {
             searchBar(false)
         }
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
         tableView.reloadData()
-        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
+        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPViewController.back))
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if viewType == 0 {
             self.title = "CP Calculator"
@@ -50,15 +50,15 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         }
     }
     
-    private func searchBar(display: Bool) {
-        self.searchDisplayController?.searchBar.hidden = !display
+    fileprivate func searchBar(_ display: Bool) {
+        self.searchDisplayController?.searchBar.isHidden = !display
         self.searchDisplayController?.searchBar.barTintColor = PCPColorNavigationCyan
-        self.searchDisplayController?.searchBar.backgroundColor = UIColor.clearColor()
-        self.searchDisplayController?.searchBar.tintColor = UIColor.whiteColor()
-        self.searchDisplayController?.searchBar.searchBarStyle = UISearchBarStyle.Minimal
+        self.searchDisplayController?.searchBar.backgroundColor = UIColor.clear
+        self.searchDisplayController?.searchBar.tintColor = UIColor.white
+        self.searchDisplayController?.searchBar.searchBarStyle = UISearchBarStyle.minimal
         self.searchDisplayController?.searchResultsTableView.backgroundColor = PCPColorBackground
-        if let searchField = self.searchDisplayController?.searchBar.valueForKey("_searchField") as? UITextField  {
-            if searchField.respondsToSelector(Selector("setAttributedPlaceholder:")) {
+        if let searchField = self.searchDisplayController?.searchBar.value(forKey: "_searchField") as? UITextField  {
+            if searchField.responds(to: #selector(setter: UITextField.attributedPlaceholder)) {
                 let placeholder = "Search"
                 let attributedString = NSMutableAttributedString(string: placeholder)
                 let range = NSRange(location: 0, length: placeholder.characters.count)
@@ -67,8 +67,8 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 attributedString.addAttribute(NSFontAttributeName, value: UIFont(name: "AvenirNext-Medium", size: 15)!, range: range)
                 searchField.attributedPlaceholder = attributedString
                 
-                searchField.clearButtonMode = UITextFieldViewMode.WhileEditing
-                searchField.textColor = .whiteColor()
+                searchField.clearButtonMode = UITextFieldViewMode.whileEditing
+                searchField.textColor = UIColor.white
             }
         }
     }
@@ -79,19 +79,19 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     }
     
     func back() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Search
-    private func searchContent(searchInput: String, scope: String = "Title") {
+    fileprivate func searchContent(_ searchInput: String, scope: String = "Title") {
         self.filtedPokemonList = self.pokemonList.filter({ (pokemon: Pokemon) -> Bool in
             let categoryMatch = (scope == "Title")
-            let stringMatch = pokemon.name.rangeOfString(searchInput)
+            let stringMatch = pokemon.name.range(of: searchInput)
             return categoryMatch && (stringMatch != nil)
         })
     }
     
-    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
+    func searchDisplayController(_ controller: UISearchDisplayController, shouldReloadTableForSearch searchString: String?) -> Bool {
         guard let searchBarInputText = self.searchDisplayController?.searchBar.text else {
             return false
         }
@@ -101,10 +101,10 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     
     // MARK: Tableview
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if viewType == 2 {
             return 487
         } else {
@@ -112,7 +112,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if viewType == 0 {
             if tableView == self.searchDisplayController?.searchResultsTableView {
                 return filtedPokemonList.count
@@ -126,18 +126,18 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewType {
         case 0:
-            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("pokemonNameCell") as? PokemonTableViewCell else {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "pokemonNameCell") as? PokemonTableViewCell else {
                 return UITableViewCell()
             }
             var pokemon : Pokemon
             
             if tableView == self.searchDisplayController?.searchResultsTableView {
-                pokemon = self.filtedPokemonList[indexPath.row]
+                pokemon = self.filtedPokemonList[(indexPath as NSIndexPath).row]
             } else {
-                pokemon = self.pokemonList[indexPath.row]
+                pokemon = self.pokemonList[(indexPath as NSIndexPath).row]
             }
             cell.textLabel?.text = pokemon.name
             cell.imageView?.image = UIImage(named: "\(pokemon.name)")
@@ -146,7 +146,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         case 1:
             return UITableViewCell()
         case 2:
-            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("aboutMe") as? AboutMeTableViewCell else {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "aboutMe") as? AboutMeTableViewCell else {
                 return UITableViewCell()
             }
             return cell
@@ -155,62 +155,62 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = PCPColorBackground
         cell.textLabel?.textColor = PCPColorContentGray       
         cell.imageView?.layer.cornerRadius = 30/2
         cell.imageView?.layer.borderWidth = 2
         cell.imageView?.layer.masksToBounds = false
-        cell.imageView?.layer.borderColor = PCPColorContent.CGColor
+        cell.imageView?.layer.borderColor = PCPColorContent.cgColor
         cell.imageView?.clipsToBounds = true
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if viewType == 0 {
             if tableView == self.searchDisplayController?.searchResultsTableView {
-                pokemon = self.filtedPokemonList[indexPath.row]
+                pokemon = self.filtedPokemonList[(indexPath as NSIndexPath).row]
             } else {
-                pokemon = self.pokemonList[indexPath.row]
+                pokemon = self.pokemonList[(indexPath as NSIndexPath).row]
             }
             
-            let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
-            let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
+            let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .alert)
+            let imageView = UIImageView(frame: CGRect(x: 200, y: 10, width: 60, height: 50))
             imageView.image = UIImage(named: "HeaderLogo")
             alert.view.addSubview(imageView)
             
-            let secondLayerAlert = UIAlertController(title: "Oops", message: "Please enter your pokemon CP.", preferredStyle: .Alert)
-            secondLayerAlert.addAction(UIAlertAction(title: "Back", style: .Cancel, handler: nil))
+            let secondLayerAlert = UIAlertController(title: "Oops", message: "Please enter your pokemon CP.", preferredStyle: .alert)
+            secondLayerAlert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
             
-            let pokemonImageView = UIImageView(frame: CGRectMake(0, 10, 60, 50))
+            let pokemonImageView = UIImageView(frame: CGRect(x: 0, y: 10, width: 60, height: 50))
             imageView.image = UIImage(named: "\(pokemon!.name)")
             alert.view.addSubview(pokemonImageView)
 
-            modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.whiteColor(), buttonColor: PCPColorNavigationCyan)
-            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.white, buttonColor: PCPColorNavigationCyan)
+            alert.addTextField(configurationHandler: { (textField) -> Void in
                 textField.placeholder = "Enter your pokemon CP"
                 textField.delegate = self
             })
-            alert.addAction(UIAlertAction(title: "Cancle", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { (UIAlertAction) in
+            alert.addAction(UIAlertAction(title: "Cancle", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (UIAlertAction) in
                 guard let inputField = alert.textFields![0] as? UITextField else {
                     return
                 }
                 guard inputField.text?.isEmpty != true else {
-                    self.presentViewController(secondLayerAlert, animated: true, completion: nil)
+                    self.present(secondLayerAlert, animated: true, completion: nil)
                     return
                 }
                 self.inputCP = Int(inputField.text ?? "0") ?? 0
-                self.performSegueWithIdentifier("pokeDetails", sender: self)
+                self.performSegue(withIdentifier: "pokeDetails", sender: self)
 
             }))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         } else if viewType == 2 {
             tableView.allowsSelection = false
         }
     }
     
-    func modifyAlertView(alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
+    func modifyAlertView(_ alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
         let subview = alert.view.subviews.first! as UIView
         let view = subview.subviews.first! as UIView
 
@@ -223,12 +223,12 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         // set font to alert via KVC, otherwise it'll get overwritten
         let titleAttributed = NSMutableAttributedString(
             string: alert.title!,
-            attributes: [NSFontAttributeName:UIFont.boldSystemFontOfSize(17)])
+            attributes: [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 17)])
         alert.setValue(titleAttributed, forKey: "attributedTitle")
         
         let messageAttributed = NSMutableAttributedString(
             string: alert.message!,
-            attributes: [NSFontAttributeName:UIFont.systemFontOfSize(13)])
+            attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 13)])
         alert.setValue(messageAttributed, forKey: "attributedMessage")
 
         // set the buttons to non-blue, if we have buttons
@@ -237,7 +237,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         }
     }
     
-    func setSubviewLabelsToTextColor(textColor: UIColor, view:UIView) {
+    func setSubviewLabelsToTextColor(_ textColor: UIColor, view:UIView) {
         for subview in view.subviews {
             if let label = subview as? UILabel {
                 label.textColor = textColor
@@ -249,9 +249,9 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     
     // MARK: Segueway
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pokeDetails" {
-            guard let destinationVController = segue.destinationViewController as? CPDetailsViewController else {
+            guard let destinationVController = segue.destination as? CPDetailsViewController else {
                 return
             }
             destinationVController.pokemon = pokemon

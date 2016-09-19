@@ -15,7 +15,7 @@ class MainInterfaceViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         self.view.backgroundColor = PCPColorBackground
-        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.separatorColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,20 +25,20 @@ class MainInterfaceViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
             return 6
         }
     }
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).section == 0 {
             if DeviceType.IS_IPAD {
                 return 520
             } else {
@@ -49,7 +49,7 @@ class MainInterfaceViewController: UITableViewController {
                 }
             }
         } else {
-            if indexPath.row % 2 == 1 {
+            if (indexPath as NSIndexPath).row % 2 == 1 {
                 // content cell
                 if Device.isIphone  {
                     return 70
@@ -67,45 +67,45 @@ class MainInterfaceViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCellWithIdentifier("logoCell", forIndexPath: indexPath) as? logoViewCell else {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as? logoViewCell else {
                 return UITableViewCell()
             }
             return cell
         } else {
-            if indexPath.row % 2 == 1 {
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("contentCell", forIndexPath: indexPath) as? MainContentViewCell else {
+            if (indexPath as NSIndexPath).row % 2 == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell", for: indexPath) as? MainContentViewCell else {
                     return UITableViewCell()
                 }
-                cell.textLabel?.text = buttons[indexPath.row/2]
+                cell.textLabel?.text = buttons[(indexPath as NSIndexPath).row/2]
                 return cell
             } else {
                 let cell = UITableViewCell()
-                cell.selectionStyle = .None
+                cell.selectionStyle = .none
                 return cell
             }
         }
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 {
-            destinationVCIndex = indexPath.row
-            self.performSegueWithIdentifier("showCPCalculator", sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 1 {
+            destinationVCIndex = (indexPath as NSIndexPath).row
+            self.performSegue(withIdentifier: "showCPCalculator", sender: self)
         }
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = PCPColorBackground
     }
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let destinationNavVC = segue.destinationViewController as? UINavigationController,
+        if let destinationNavVC = segue.destination as? UINavigationController,
             let vc = destinationNavVC.topViewController as? CPViewController {
             
             if destinationVCIndex == 1 {
