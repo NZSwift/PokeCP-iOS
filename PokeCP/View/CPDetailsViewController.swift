@@ -94,10 +94,8 @@ class CPDetailsViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("NextGeneration", forIndexPath: indexPath) as? CPDNextGenerationViewCell else {
                 return emptyCell
             }
-
+            cell.selectionStyle = .None
             cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[indexPath.row].name)")
-            //cell.imageView?.contentMode = .ScaleAspectFit
-        
             cell.name.text = "\(pokemonGenerationList[indexPath.row].name)"
             cell.generationNumber.text = "\((indexPath.row+2).ordinal())"
             return cell

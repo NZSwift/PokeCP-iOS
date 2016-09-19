@@ -37,8 +37,17 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
         tableView.reloadData()
-        self.title = "CP Calculator"
         self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(CPViewController.back))
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewType == 0 {
+            self.title = "CP Calculator"
+        } else if viewType == 1 {
+            self.title = "Username Check"
+        } else {
+            self.title = "About me"
+        }
     }
     
     private func searchBar(display: Bool) {
@@ -95,12 +104,25 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if viewType == 2 {
+            return 487
+        } else {
+            return 45
+        }
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            return filtedPokemonList.count
+        if viewType == 0 {
+            if tableView == self.searchDisplayController?.searchResultsTableView {
+                return filtedPokemonList.count
+            } else {
+                return pokemonList.count
+            }
+        } else if viewType == 2 {
+            return 1
         } else {
-            return pokemonList.count
+            return 1
         }
     }
     
@@ -145,37 +167,47 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        if tableView == self.searchDisplayController?.searchResultsTableView {
-            pokemon = self.filtedPokemonList[indexPath.row]
-        } else {
-            pokemon = self.pokemonList[indexPath.row]
-        }
-        
-        let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
-        let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
-        imageView.image = UIImage(named: "HeaderLogo")
-        alert.view.addSubview(imageView)
-        
-        let pokemonImageView = UIImageView(frame: CGRectMake(0, 10, 60, 50))
-        imageView.image = UIImage(named: "\(pokemon!.name)")
-        alert.view.addSubview(pokemonImageView)
-
-        modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.whiteColor(), buttonColor: PCPColorNavigationCyan)
-        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-            textField.placeholder = "Enter your pokemon CP"
-            textField.delegate = self
-        })
-        alert.addAction(UIAlertAction(title: "Cancle", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { (UIAlertAction) in
-            guard let inputField = alert.textFields![0] as? UITextField else {
-                return
+        if viewType == 0 {
+            if tableView == self.searchDisplayController?.searchResultsTableView {
+                pokemon = self.filtedPokemonList[indexPath.row]
+            } else {
+                pokemon = self.pokemonList[indexPath.row]
             }
-            self.inputCP = Int(inputField.text ?? "0") ?? 0
-            self.performSegueWithIdentifier("pokeDetails", sender: self)
+            
+            let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .Alert)
+            let imageView = UIImageView(frame: CGRectMake(200, 10, 60, 50))
+            imageView.image = UIImage(named: "HeaderLogo")
+            alert.view.addSubview(imageView)
+            
+            let secondLayerAlert = UIAlertController(title: "Oops", message: "Please enter your pokemon CP.", preferredStyle: .Alert)
+            secondLayerAlert.addAction(UIAlertAction(title: "Back", style: .Cancel, handler: nil))
+            
+            let pokemonImageView = UIImageView(frame: CGRectMake(0, 10, 60, 50))
+            imageView.image = UIImage(named: "\(pokemon!.name)")
+            alert.view.addSubview(pokemonImageView)
 
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
+            modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.whiteColor(), buttonColor: PCPColorNavigationCyan)
+            alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                textField.placeholder = "Enter your pokemon CP"
+                textField.delegate = self
+            })
+            alert.addAction(UIAlertAction(title: "Cancle", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Next", style: .Default, handler: { (UIAlertAction) in
+                guard let inputField = alert.textFields![0] as? UITextField else {
+                    return
+                }
+                guard inputField.text?.isEmpty != true else {
+                    self.presentViewController(secondLayerAlert, animated: true, completion: nil)
+                    return
+                }
+                self.inputCP = Int(inputField.text ?? "0") ?? 0
+                self.performSegueWithIdentifier("pokeDetails", sender: self)
+
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if viewType == 2 {
+            tableView.allowsSelection = false
+        }
     }
     
     func modifyAlertView(alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
