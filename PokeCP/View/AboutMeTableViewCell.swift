@@ -13,20 +13,21 @@ class AboutMeTableViewCell: UITableViewCell {
     @IBOutlet var headImage: UIImageView!
     
     @IBAction func twitterAction(sender: AnyObject) {
-        let url = NSURL(string: "https://twitter.com/jiaoliguo")!
-        UIApplication.sharedApplication().openURL(url)
+        openURL("https://twitter.com/jiaoliguo")
     }
     
     @IBAction func blogAction(sender: AnyObject) {
-        let url = NSURL(string: "https://liguo.jiao.co.nz/")!
-        UIApplication.sharedApplication().openURL(url)
+        openURL("https://liguo.jiao.co.nz/")
     }
     
     @IBAction func linkedinAction(sender: AnyObject) {
-        let url = NSURL(string: "https://nz.linkedin.com/in/liguojiaouc")!
-        UIApplication.sharedApplication().openURL(url)
+        openURL("https://nz.linkedin.com/in/liguojiaouc")
     }
-    
+    private func openURL(addressLink: String) {
+        if let url = NSURL(string: addressLink) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
