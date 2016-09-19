@@ -172,24 +172,51 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqD-Hl-9qi">
-                                            <rect key="frame" x="328" y="429" width="39" height="39"/>
-                                            <state key="normal" image="twitter"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0L-lC-fPZ">
-                                            <rect key="frame" x="234" y="429" width="39" height="39"/>
-                                            <state key="normal" image="facebook"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d2-FU-q6M">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqD-Hl-9qi">
                                             <rect key="frame" x="281" y="429" width="39" height="39"/>
-                                            <state key="normal" image="github"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="Z5Y-Pq-9of"/>
+                                                <constraint firstAttribute="width" constant="39" id="rNT-KL-ock"/>
+                                            </constraints>
+                                            <state key="normal" image="twitter"/>
+                                            <connections>
+                                                <action selector="twitterAction:" destination="fvI-wc-lFl" eventType="touchUpInside" id="U9V-Pw-hke"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0L-lC-fPZ">
+                                            <rect key="frame" x="234" y="429" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="6vo-nV-LBC"/>
+                                                <constraint firstAttribute="width" constant="39" id="Q0B-wb-f0S"/>
+                                            </constraints>
+                                            <state key="normal" image="linkedin"/>
+                                            <connections>
+                                                <action selector="linkedinAction:" destination="fvI-wc-lFl" eventType="touchUpInside" id="a3t-qO-wu8"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZ5-wp-Osj">
+                                            <rect key="frame" x="328" y="429" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="39" id="V9p-9G-MxS"/>
+                                                <constraint firstAttribute="height" constant="39" id="W7u-hV-Tns"/>
+                                            </constraints>
+                                            <state key="normal" image="blogger"/>
+                                            <connections>
+                                                <action selector="blogAction:" destination="fvI-wc-lFl" eventType="touchUpInside" id="aLl-je-CFs"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ZqD-Hl-9qi" firstAttribute="centerX" secondItem="vh9-yy-uiZ" secondAttribute="centerX" id="5RM-E0-aWd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="WOH-x9-jqb" secondAttribute="trailing" constant="50" id="MtP-Vz-AJa"/>
+                                        <constraint firstItem="MZ5-wp-Osj" firstAttribute="leading" secondItem="ZqD-Hl-9qi" secondAttribute="trailing" constant="8" id="O0T-n1-H8N"/>
+                                        <constraint firstItem="ZqD-Hl-9qi" firstAttribute="leading" secondItem="g0L-lC-fPZ" secondAttribute="trailing" constant="8" id="Rf5-Xc-Be4"/>
                                         <constraint firstItem="L6S-Ck-E3U" firstAttribute="leading" secondItem="vh9-yy-uiZ" secondAttribute="leadingMargin" constant="-8" id="SLd-tW-WIo"/>
                                         <constraint firstItem="WOH-x9-jqb" firstAttribute="top" secondItem="L6S-Ck-E3U" secondAttribute="bottom" constant="43" id="SbH-8X-j1a"/>
+                                        <constraint firstItem="ZqD-Hl-9qi" firstAttribute="centerY" secondItem="g0L-lC-fPZ" secondAttribute="centerY" id="YHQ-PX-bcw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="L6S-Ck-E3U" secondAttribute="trailing" constant="-8" id="ZDd-Ju-KmK"/>
+                                        <constraint firstItem="ZqD-Hl-9qi" firstAttribute="top" secondItem="WOH-x9-jqb" secondAttribute="bottom" constant="8" id="a1S-tV-4zI"/>
+                                        <constraint firstItem="MZ5-wp-Osj" firstAttribute="centerY" secondItem="g0L-lC-fPZ" secondAttribute="centerY" id="hYu-Oh-oCF"/>
                                         <constraint firstItem="WOH-x9-jqb" firstAttribute="leading" secondItem="vh9-yy-uiZ" secondAttribute="leadingMargin" constant="50" id="jMi-6B-3nL"/>
                                         <constraint firstItem="L6S-Ck-E3U" firstAttribute="top" secondItem="vh9-yy-uiZ" secondAttribute="topMargin" constant="-8" id="uh6-Ui-XPg"/>
                                     </constraints>
@@ -226,7 +253,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1627" y="1143"/>
+            <point key="canvasLocation" x="1632" y="1404"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="uOv-8b-eFC">
@@ -417,8 +444,8 @@
     </scenes>
     <resources>
         <image name="HeaderLogo" width="320" height="240"/>
-        <image name="facebook" width="512" height="512"/>
-        <image name="github" width="512" height="512"/>
+        <image name="blogger" width="512" height="512"/>
+        <image name="linkedin" width="512" height="512"/>
         <image name="self" width="1080" height="1080"/>
         <image name="selfIntro" width="460" height="320"/>
         <image name="twitter" width="512" height="512"/>
