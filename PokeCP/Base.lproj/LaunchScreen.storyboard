@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +15,53 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rei-VU-RK8">
+                                <rect key="frame" x="16" y="28" width="343" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="RaK-Ay-2x8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright ® 2016 Liguo Jiao. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihn-3l-JR9">
+                                <rect key="frame" x="-4" y="630" width="383" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="1Lm-Dx-tYB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogoWithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="zot-iG-Mxg">
+                                <rect key="frame" x="96" y="242" width="183" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="ReN-jI-fj3"/>
+                                    <constraint firstAttribute="width" constant="183" id="aoS-pW-RX7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.16862745100000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zot-iG-Mxg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UuN-9I-2v6"/>
+                            <constraint firstItem="ihn-3l-JR9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="V3X-OT-bAG"/>
+                            <constraint firstItem="ihn-3l-JR9" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" constant="20" id="ZcH-6u-zGM"/>
+                            <constraint firstItem="rei-VU-RK8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="aWR-51-HUe"/>
+                            <constraint firstItem="rei-VU-RK8" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="arK-5w-gXM"/>
+                            <constraint firstItem="zot-iG-Mxg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nIB-zX-eJf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rei-VU-RK8" secondAttribute="trailing" id="pJr-vB-asG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ihn-3l-JR9" secondAttribute="bottom" constant="8" id="xaH-RP-7b4"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HeaderLogo" width="320" height="240"/>
+        <image name="starLogoWithoutLayer" width="1024" height="1024"/>
+    </resources>
 </document>
