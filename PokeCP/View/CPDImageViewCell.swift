@@ -17,16 +17,17 @@ class CPDImageViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layoutIfNeeded()
         pokemonHeadImage.layer.borderWidth = 3
         pokemonHeadImage.layer.masksToBounds = false
-        pokemonHeadImage.layer.borderColor = PCPColorContent.CGColor
+        pokemonHeadImage.layer.borderColor = PCPColorContent.cgColor
         pokemonHeadImage.layer.cornerRadius = pokemonHeadImage.frame.height / 2
         pokemonHeadImage.clipsToBounds = true
         
-        nameLabel.textColor = UIColor.whiteColor()
+        nameLabel.textColor = UIColor.white
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
