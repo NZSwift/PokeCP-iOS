@@ -31,6 +31,7 @@ class AboutMeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layoutIfNeeded()
         headImage.layer.borderWidth = 10
         headImage.layer.borderColor = UIColor.black.cgColor
         headImage.layer.cornerRadius = self.headImage.frame.size.height/2

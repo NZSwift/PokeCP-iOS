@@ -26,20 +26,27 @@
                                     <frame key="frameInset" width="375" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
-                                            <frame key="frameInset" minX="139" minY="8" width="325" height="244"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="cVM-kW-utA" secondAttribute="height" multiplier="325:244" id="1wJ-VN-Hw4"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogoWithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-GY-AcS">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="8ua-3d-hmY"/>
+                                                <constraint firstAttribute="width" constant="100" id="RVP-lT-VH8"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ev3-GY-AcS" firstAttribute="leading" secondItem="T6D-5M-UrS" secondAttribute="leadingMargin" constant="18" id="6xb-Mi-mbv"/>
                                         <constraint firstAttribute="topMargin" secondItem="cVM-kW-utA" secondAttribute="top" id="Ihn-4b-Yph"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="centerY" secondItem="T6D-5M-UrS" secondAttribute="centerY" id="OC6-5C-1Dv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cVM-kW-utA" secondAttribute="bottom" id="Vwm-Z6-QJP"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="top" secondItem="T6D-5M-UrS" secondAttribute="topMargin" id="X0L-IN-iih"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="width" relation="greaterThanOrEqual" secondItem="T6D-5M-UrS" secondAttribute="width" constant="-275" id="ehv-BO-a6A"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="centerY" secondItem="T6D-5M-UrS" secondAttribute="centerY" id="f9m-Wz-zbx"/>
+                                        <constraint firstItem="ev3-GY-AcS" firstAttribute="bottom" secondItem="T6D-5M-UrS" secondAttribute="bottomMargin" id="ybe-Ed-0Cb"/>
                                         <constraint firstItem="cVM-kW-utA" firstAttribute="centerX" secondItem="T6D-5M-UrS" secondAttribute="centerX" constant="1" id="z7n-7E-RxB"/>
                                     </constraints>
                                     <variation key="default">
@@ -89,7 +96,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cf-11-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882" y="431"/>
+            <point key="canvasLocation" x="880.79999999999995" y="430.43478260869568"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kep-N2-tba">
@@ -432,6 +439,7 @@
         <image name="linkedin" width="512" height="512"/>
         <image name="self" width="1080" height="1080"/>
         <image name="selfIntro" width="460" height="320"/>
+        <image name="starLogoWithoutLayer" width="1024" height="1024"/>
         <image name="twitter" width="512" height="512"/>
     </resources>
 </document>
