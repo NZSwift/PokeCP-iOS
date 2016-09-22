@@ -24,9 +24,9 @@ class UsernameCheckTableViewCell: UITableViewCell {
         }
         checkUsername(username: userName) { (success: Bool, error: NSError?) in
             if success {
-                self.resultLabel.text = "Username is availiable."
+                self.resultLabel.text = "Username is available."
             } else {
-                self.resultLabel.text = "Username is invalid."
+                self.resultLabel.text = "Username has been taken."
             }
         }
     }
@@ -56,7 +56,7 @@ class UsernameCheckTableViewCell: UITableViewCell {
                     guard let validValue = JSON["valid"] as? Bool else {
                         return
                     }
-                    completionHandler(inuseValue && validValue, nil)
+                    completionHandler(!(inuseValue && validValue), nil)
                 }
             case .failure(let error):
                 completionHandler(false, error as NSError?)
