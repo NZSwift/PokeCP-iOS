@@ -7,11 +7,24 @@
 ## Introduction
 * PokeCP is an iOS Application build by Swift, and it's open-source. The propose of this APP is for player to calculate the combat power value, and see which pokemon would be after evolution.
 
-## Requirements
-Environment require minimum: **iOS 9**
-
+## Details:
+* Requirements
+	* Environment require minimum: **iOS 9**
+* Support Language
+	* **English**
+	* Spanish
+	* Portuguese
+	* Chinese(simplified/traditional)
+	* Japanese
+	* Korean
+	* Maori
+	* Filipino
+	* Thai
+	* Uighur
+	* Tibetan
+	* (Notes: bold name is currently available. other languages would be available soon.)
+	
 ## What does it look like
-
 ![image](https://cloud.githubusercontent.com/assets/5027957/18747421/5fd16fa2-8121-11e6-9d80-4abf49a25bc2.png)
 
 ## Make it better
