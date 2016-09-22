@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LUn-0K-fNc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LUn-0K-fNc">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -23,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="260"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRK-ol-9wx" id="T6D-5M-UrS">
-                                    <frame key="frameInset" width="375" height="259"/>
+                                    <frame key="frameInset" width="375" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeaderLogo" translatesAutoresizingMaskIntoConstraints="NO" id="cVM-kW-utA">
@@ -31,7 +30,7 @@
                                                 <constraint firstAttribute="width" secondItem="cVM-kW-utA" secondAttribute="height" multiplier="325:244" id="1wJ-VN-Hw4"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogoWithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-GY-AcS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogo2WithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-GY-AcS">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="8ua-3d-hmY"/>
                                                 <constraint firstAttribute="width" constant="100" id="RVP-lT-VH8"/>
@@ -66,11 +65,11 @@
                                 <rect key="frame" x="0.0" y="288" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gV9-xR-Hed" id="Bno-8j-eRj">
-                                    <frame key="frameInset" width="375" height="82"/>
+                                    <frame key="frameInset" width="375" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xV2-uM-kXd">
-                                            <frame key="frameInset" minX="15" width="345" height="82"/>
+                                            <frame key="frameInset" minX="15" width="345" height="82.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
@@ -126,7 +125,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMY-E5-1UC" id="oc8-16-e23">
-                                    <frame key="frameInset" width="600" height="43"/>
+                                    <frame key="frameInset" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -134,10 +133,10 @@
                                 <rect key="frame" x="0.0" y="180" width="600" height="390"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZTa-Rr-rTh" id="7OR-od-fmj">
-                                    <frame key="frameInset" width="600" height="389"/>
+                                    <frame key="frameInset" width="600" height="390"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogoWithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-CW-VOK">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starLogo2WithoutLayer" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-CW-VOK">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="160" id="Dsq-vK-eCz"/>
                                                 <constraint firstAttribute="width" secondItem="vwX-CW-VOK" secondAttribute="height" multiplier="1:1" id="kbk-ev-k4y"/>
@@ -336,7 +335,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="330"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mxz-Ej-2b2" id="w7D-3J-xEH">
-                                    <frame key="frameInset" width="600" height="329"/>
+                                    <frame key="frameInset" width="600" height="330"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gPv-aV-vTD">
@@ -507,7 +506,7 @@
         <image name="linkedin" width="512" height="512"/>
         <image name="self" width="1080" height="1080"/>
         <image name="selfIntro" width="460" height="320"/>
-        <image name="starLogoWithoutLayer" width="1024" height="1024"/>
+        <image name="starLogo2WithoutLayer" width="1024" height="1024"/>
         <image name="twitter" width="512" height="512"/>
     </resources>
 </document>
