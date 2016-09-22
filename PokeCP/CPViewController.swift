@@ -31,7 +31,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         self.tableView.backgroundView = nil
         if viewType == 0 {
             searchBar(true)
-        } else if viewType == 2 {
+        } else {
             searchBar(false)
         }
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -107,6 +107,8 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if viewType == 2 {
             return 487
+        } else if viewType == 1 {
+            return 390
         } else {
             return 45
         }
@@ -144,7 +146,11 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             
             return cell
         case 1:
-            return UITableViewCell()
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "userNameCheck", for: indexPath) as? UsernameCheckTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            return cell
         case 2:
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "aboutMe") as? AboutMeTableViewCell else {
                 return UITableViewCell()
