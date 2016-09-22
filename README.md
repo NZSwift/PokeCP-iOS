@@ -5,7 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/NZSwift/PokeCP-iOS.svg?style=flat
 )](https://github.com/NZSwift/PokeCP-iOS/issues?state=open)
 ## Introduction
-* PokeCP is an iOS Application build by Swift, and it's open-source. The propose of this APP is for player to calculate the combat power value, and see which pokemon would be after evolution.
+* **PokeCP** is an iOS Application build by Swift, and it's open-source. The purpose of this APP is for player to calculate the combat power value, and see which pokemon would be after evolution.
 
 ## Details:
 * Requirements
