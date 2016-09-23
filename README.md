@@ -1,5 +1,7 @@
-![image](https://cloud.githubusercontent.com/assets/5027957/18746329/d1cd861a-811a-11e6-9e08-5234488bd1ab.png)
-
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/5027957/18746329/d1cd861a-811a-11e6-9e08-5234488bd1ab.png">
+</p>
+<p align="center">
 [![Build Status](https://www.bitrise.io/app/a1333256cd241247.svg?token=1bS2NnjqlhcJ0TY5qgW9zA&branch=master)](https://www.bitrise.io/app/a1333256cd241247)
 [![codebeat badge](https://codebeat.co/badges/442e8573-8c1b-473a-9aa0-a3f8fccb77ad)](https://codebeat.co/projects/github-com-nzswift-pokecp-ios)
 [![Issues](https://img.shields.io/github/issues/NZSwift/PokeCP-iOS.svg?style=flat
