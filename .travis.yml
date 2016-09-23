@@ -1,15 +1,8 @@
 language: swift
-language: swift
-osx_image: xcode7.3
-xcode_project: GymWorkoutManager.xcworkspace
-xcode_scheme: GymWorkoutManager
-xcode_sdk: iphonesimulator9.0
-after_success:
-- curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/mast
-osx_image: xcode
-xcode_project: GymWorkoutManager.xcworkspace
-xcode_scheme: GymWorkoutManager
-xcode_sdk: iphonesimulator9.0
+osx_image: xcode8.0
+xcode_project: PokeCP.xcworkspace
+xcode_scheme: PokeCP
+xcode_sdk: iphonesimulator10.0
 after_success:
 - curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge
 - chmod a+x /tmp/travis-automerge
