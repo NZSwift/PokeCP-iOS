@@ -2,10 +2,15 @@
 <img src="https://cloud.githubusercontent.com/assets/5027957/18746329/d1cd861a-811a-11e6-9e08-5234488bd1ab.png">
 </p>
 <p align="center">
+![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
+[![Xcode 8.0](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode/)
+[![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg?style=flat)](https://developer.apple.com/swift/) 
 [![Build Status](https://www.bitrise.io/app/a1333256cd241247.svg?token=1bS2NnjqlhcJ0TY5qgW9zA&branch=master)](https://www.bitrise.io/app/a1333256cd241247)
 [![codebeat badge](https://codebeat.co/badges/442e8573-8c1b-473a-9aa0-a3f8fccb77ad)](https://codebeat.co/projects/github-com-nzswift-pokecp-ios)
 [![Issues](https://img.shields.io/github/issues/NZSwift/PokeCP-iOS.svg?style=flat
 )](https://github.com/NZSwift/PokeCP-iOS/issues?state=open)
+![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg) 
+
 ## Introduction
 * **PokeCP** is an iOS Application build by Swift, and it's open-source. The purpose of this APP is for player to calculate the combat power value, and see which pokemon would be after evolution.
 
