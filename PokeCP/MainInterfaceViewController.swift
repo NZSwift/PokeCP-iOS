@@ -9,7 +9,8 @@
 import UIKit
 
 class MainInterfaceViewController: UITableViewController {
-    let buttons = ["CP Calculator", "Username Check", "About me"]
+    let buttons = [NSLocalizedString("CPCalculator", comment: "CP Calculator"), NSLocalizedString("UsernameCheck", comment: "Username Check"), NSLocalizedString("AboutMe", comment: "About me")]
+    
     var destinationVCIndex: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()

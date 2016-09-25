@@ -64,7 +64,7 @@ class CPDetailsViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonHeadImage", for: indexPath) as? CPDImageViewCell else {
                     return emptyCell
                 }
-                if let imageName = pokemon?.name {
+                if let imageName = pokemon?.imageName {
                     cell.pokemonHeadImage.image = UIImage(named: "\(imageName)")
                 }
                 cell.nameLabel.text = pokemon?.name
@@ -74,9 +74,9 @@ class CPDetailsViewController: UITableViewController {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonEvoInfo", for: indexPath) as? CPDInfoViewCell else {
                     return emptyCell
                 }
-                cell.candyLabel.text = "Candy: \n\(pokemon?.candy ?? 0)"
-                cell.cpLabel.text = "Min CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.low ?? 1.0))\nMax CP: \n\(CPCalculation(cpInput ?? 0, index: pokemon?.high ?? 1.0))"
-                cell.typeLabel.text = "Type: \n\(pokemon?.type ?? "")"
+                cell.candyLabel.text = NSLocalizedString("CANDY", comment: "Candy") + ": \n\(pokemon?.candy ?? 0)"
+                cell.cpLabel.text = NSLocalizedString("MIN_CP", comment: "Min CP") + ": \n\(CPCalculation(cpInput ?? 0, index: pokemon?.low ?? 1.0))\n" + NSLocalizedString("MAX_CP", comment: "Max CP") + ": \n\(CPCalculation(cpInput ?? 0, index: pokemon?.high ?? 1.0))"
+                cell.typeLabel.text = NSLocalizedString("TYPE", comment: "Type") + ": \n\(pokemon?.type ?? "")"
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokemonEvoInfo", for: indexPath) as? CPDInfoViewCell else {
@@ -85,7 +85,7 @@ class CPDetailsViewController: UITableViewController {
                 cell.candyLabel.backgroundColor = PCPColorNavigationCyan
                 cell.typeLabel.backgroundColor = PCPColorNavigationCyan
                 cell.cpLabel.backgroundColor = PCPColorNavigationCyan
-                cell.typeLabel.text = "Max Power: \n\(pokemon?.maxIndex ?? 0)"
+                cell.typeLabel.text = NSLocalizedString("MAX_POWER", comment: "Max Power") +  ": \n\(pokemon?.maxIndex ?? 0)"
                 return cell
             default:
                 return emptyCell
