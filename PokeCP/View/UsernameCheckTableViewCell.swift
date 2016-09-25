@@ -24,9 +24,9 @@ class UsernameCheckTableViewCell: UITableViewCell {
         }
         checkUsername(username: userName) { (success: Bool, error: NSError?) in
             if success {
-                self.resultLabel.text = "Username is available."
+                self.resultLabel.text = NSLocalizedString("UsernameCheckViewResultLabelAvailable", comment: "Username is available.")
             } else {
-                self.resultLabel.text = "Username has been taken."
+                self.resultLabel.text = NSLocalizedString("UsernameCheckViewResultLabelTaken", comment: "Username has been taken.")
             }
         }
     }

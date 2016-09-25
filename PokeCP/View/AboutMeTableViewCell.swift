@@ -36,7 +36,7 @@ class AboutMeTableViewCell: UITableViewCell {
         headImage.layer.borderColor = UIColor.black.cgColor
         headImage.layer.cornerRadius = self.headImage.frame.size.height/2
         headImage.clipsToBounds = true
-        let intro: String = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand"
+        let intro: String = NSLocalizedString("selfIntro", comment: "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand")
         let content: NSMutableAttributedString = NSMutableAttributedString(string: intro, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
         content.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location:0,length:18))
         content.addAttribute(NSForegroundColorAttributeName, value: PCPColorContent, range: NSRange(location:20,length:13))
