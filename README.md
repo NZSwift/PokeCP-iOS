@@ -4,7 +4,7 @@
 <p align="center">
 ![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 [![Xcode 8.0](https://img.shields.io/badge/Xcode-8.0-blue.svg)](https://developer.apple.com/xcode/)
-[![Swift 2.3](https://img.shields.io/badge/Swift-2.3-orange.svg?style=flat)](https://developer.apple.com/swift/) 
+[![Swift 3.0](https://img.shields.io/badge/Swift-2.3-orange.svg?style=flat)](https://developer.apple.com/swift/) 
 [![Build Status](https://travis-ci.org/NZSwift/PokeCP-iOS.svg?branch=master)](https://travis-ci.org/NZSwift/PokeCP-iOS)
 [![codebeat badge](https://codebeat.co/badges/442e8573-8c1b-473a-9aa0-a3f8fccb77ad)](https://codebeat.co/projects/github-com-nzswift-pokecp-ios)
 [![Issues](https://img.shields.io/github/issues/NZSwift/PokeCP-iOS.svg?style=flat
