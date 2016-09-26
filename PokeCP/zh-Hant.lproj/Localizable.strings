@@ -6,28 +6,28 @@
   Copyright © 2016年 Liguo Jiao. All rights reserved.
 */
 
-selfIntro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
-UsernameCheckViewResultLabelTaken = "Username is taken.";
-UsernameCheckViewResultLabelAvailable = "Username is available.";
+selfIntro = "軟體工程師 \n iOS 開發工程師 \n\n 基督城, 紐西蘭";
+UsernameCheckViewResultLabelTaken = "帳戶名已被註冊.";
+UsernameCheckViewResultLabelAvailable = "帳戶名可以註冊.";
 
-CPCalculator = "CP Calculator";
-UsernameCheck = "Username Check";
-AboutMe = "About me";
+CPCalculator = "戰鬥力CP計算器";
+UsernameCheck = "帳戶名檢索";
+AboutMe = "關於開發者";
 
-CP = "Combat Power";
-Message_Whats_your_pokemon_CP = "What's your Pokemon CP?";
+CP = "戰鬥力";
+Message_Whats_your_pokemon_CP = "妳的神奇寶貝戰鬥力CP值是多少?";
 BACK = "Back";
-Message_Please_Enter_Your_Pokemon_CP = "Please enter your pokemon CP.";
-Message_Enter_Your_Pokemon_CP = "Enter your pokemon CP.";
+Message_Please_Enter_Your_Pokemon_CP = "請輸入你的神奇寶貝戰鬥力CP數值.";
+Message_Enter_Your_Pokemon_CP = "輸入妳的神奇寶貝戰鬥力數值.";
 
-CACLE = "Cancle";
-NEXT = "Next";
+CACEL = "取消";
+NEXT = "下一步";
 
-CANDY = "Candy";
-MIN_CP="Min CP";
-MAX_CP= "Max CP";
-TYPE= "Type";
-MAX_POWER= "Max Power";
+CANDY = "糖果";
+MIN_CP="最小 CP";
+MAX_CP= "最大 CP";
+TYPE= "種類";
+MAX_POWER= "最大戰鬥力";
 
 
 Bulbasaur = "妙蛙種子";

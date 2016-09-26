@@ -6,28 +6,28 @@
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
 
-selfIntro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
-UsernameCheckViewResultLabelTaken = "Username is taken.";
-UsernameCheckViewResultLabelAvailable = "Username is available.";
+selfIntro = "Ingénieur de Logiciel \n Développeur iOS \n\n Christchurch, New Zealand";
+UsernameCheckViewResultLabelTaken = "Nom d'utilisateur indisponible.";
+UsernameCheckViewResultLabelAvailable = "Nom d'utilisateur disponible.";
 
-CPCalculator = "CP Calculator";
-UsernameCheck = "Username Check";
-AboutMe = "About me";
+CPCalculator = "Calculatrice de PC";
+UsernameCheck = "Vérification du nom d'utilisateur";
+AboutMe = "À Propos";
 
-CP = "Combat Power";
-Message_Whats_your_pokemon_CP = "What's your Pokemon CP?";
-BACK = "Back";
-Message_Please_Enter_Your_Pokemon_CP = "Please enter your pokemon CP.";
-Message_Enter_Your_Pokemon_CP = "Enter your pokemon CP.";
+CP = "Puissance de Combat";
+Message_Whats_your_pokemon_CP = "Quel est la PC de votre Pokemon?";
+BACK = "Retour";
+Message_Please_Enter_Your_Pokemon_CP = "veuillez entrer la PC de votre pokemon.";
+Message_Enter_Your_Pokemon_CP = "Entrer la PC de votre pokemon.";
 
-CANCEL = "Cancle";
-NEXT = "Next";
+CACEL = "Annuler";
+NEXT = "Suivant";
 
-CANDY = "Candy";
-MIN_CP="Min CP";
-MAX_CP= "Max CP";
+CANDY = "Friandise";
+MIN_CP="Min PC";
+MAX_CP= "Max PC";
 TYPE= "Type";
-MAX_POWER= "Max Power";
+MAX_POWER= "Puissance Max";
 
 
 Abra = "Abra";

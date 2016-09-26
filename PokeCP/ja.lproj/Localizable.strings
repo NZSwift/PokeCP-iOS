@@ -20,7 +20,7 @@ BACK = "Back";
 Message_Please_Enter_Your_Pokemon_CP = "Please enter your pokemon CP.";
 Message_Enter_Your_Pokemon_CP = "Enter your pokemon CP.";
 
-CACLE = "Cancle";
+CANCEL = "Cancle";
 NEXT = "Next";
 
 CANDY = "Candy";

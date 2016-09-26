@@ -106,6 +106,9 @@
 		E65022BA1D7916860016D16B /* CPDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPDetailsViewController.swift; path = View/CPDetailsViewController.swift; sourceTree = "<group>"; };
 		E65022BC1D791C390016D16B /* CPDImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDImageViewCell.swift; sourceTree = "<group>"; };
 		E65022BE1D791C700016D16B /* CPDInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDInfoViewCell.swift; sourceTree = "<group>"; };
+		E653EE1E1D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		E653EE1F1D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E653EE201D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5838A2925A52B34BD455244 /* Pods-PokeCP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCP.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCP/Pods-PokeCP.release.xcconfig"; sourceTree = "<group>"; };
 		FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -357,6 +360,7 @@
 				ko,
 				ru,
 				de,
+				fr,
 			);
 			mainGroup = 0517B33F1D66DD920015CDFA;
 			productRefGroup = 0517B3491D66DD920015CDFA /* Products */;
@@ -600,6 +604,7 @@
 				05A0C6A41D97F98800D054EC /* ko */,
 				05A0C6A71D97FB4800D054EC /* ru */,
 				05A0C6AA1D97FCCC00D054EC /* de */,
+				E653EE1E1D99E94A00602CF0 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				05A0C6A51D97F98800D054EC /* ko */,
 				05A0C6A81D97FB4800D054EC /* ru */,
 				05A0C6AB1D97FCCC00D054EC /* de */,
+				E653EE1F1D99E94A00602CF0 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 				05A0C6A61D97F98800D054EC /* ko */,
 				05A0C6A91D97FB4800D054EC /* ru */,
 				05A0C6AC1D97FCCC00D054EC /* de */,
+				E653EE201D99E94A00602CF0 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

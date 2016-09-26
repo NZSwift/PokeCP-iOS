@@ -19,7 +19,7 @@ BACK = "返回";
 Message_Please_Enter_Your_Pokemon_CP = "请输入你的宠物小精灵的战斗力CP数值.";
 Message_Enter_Your_Pokemon_CP = "输入你的宠物小精灵的战斗力CP数值.";
 
-CACLE = "取消";
+CANCEL = "取消";
 NEXT = "下一步";
 
 CANDY = "糖果";

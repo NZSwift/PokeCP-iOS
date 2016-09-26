@@ -197,7 +197,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 textField.placeholder = NSLocalizedString("Message_Enter_Your_Pokemon_CP", comment: "Enter your pokemon CP")
                 textField.delegate = self
             })
-            alert.addAction(UIAlertAction(title: NSLocalizedString("CACLE", comment: "Cancle"), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: NSLocalizedString("NEXT", comment: "Next"), style: .default, handler: { (UIAlertAction) in
                 guard let inputField = alert.textFields![0] as? UITextField else {
                     return
