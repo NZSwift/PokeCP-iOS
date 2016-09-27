@@ -5,32 +5,32 @@
  Created by Liguo Jiao on 2016/9/25.
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
-SELF_INTRO_POSITION1 = "소프트웨어 엔지니어";
-SELF_INTRO_POSITION2 = "iOS 개발자";
-SELF_INTRO_LOCATION = "크라이스트처치, 뉴질랜드";
+SELF_INTRO_POSITION1 = "ソフトウェアエンジニア";
+SELF_INTRO_POSITION2 = "iOS 開発者";
+SELF_INTRO_LOCATION = "クライストチャーチ, ニュージランド";
 
-selfIntro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
-UsernameCheckViewResultLabelTaken = "Username is taken.";
-UsernameCheckViewResultLabelAvailable = "Username is available.";
 
-CPCalculator = "CP Calculator";
-UsernameCheck = "Username Check";
-AboutMe = "About me";
+UsernameCheckViewResultLabelTaken = "現在のユーザーIDは、使用されています。";
+UsernameCheckViewResultLabelAvailable = "ユーザー名が見つかりません.";
+
+CPCalculator = "戦闘能 の計算";
+UsernameCheck = "ユーザー名の確定";
+AboutMe = "開発者から";
 
 CP = "Combat Power";
-Message_Whats_your_pokemon_CP = "What's your Pokemon CP?";
-BACK = "Back";
-Message_Please_Enter_Your_Pokemon_CP = "Please enter your pokemon CP.";
-Message_Enter_Your_Pokemon_CP = "Enter your pokemon CP.";
+Message_Whats_your_pokemon_CP = "ポケモンの戦闘能力は、いくらですか?";
+BACK = "戻る";
+Message_Please_Enter_Your_Pokemon_CP = "ポケモンの戦闘能力を記入してください。";
+Message_Enter_Your_Pokemon_CP = "ポケモンの戦闘能力を記入してください。";
 
-CANCEL = "Cancle";
-NEXT = "Next";
+CANCEL = "キャンセル";
+NEXT = "次へ";
 
-CANDY = "Candy";
-MIN_CP="Min CP";
-MAX_CP= "Max CP";
-TYPE= "Type";
-MAX_POWER= "Max Power";
+CANDY = "キャンディー";
+MIN_CP="最減の戦闘能力";
+MAX_CP= "最高の戦闘能力";
+TYPE= "種類";
+MAX_POWER= "最高の戦闘力";
 
 
 Bulbasaur = "フシギダネ";
