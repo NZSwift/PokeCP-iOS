@@ -17,6 +17,7 @@ class MainInterfaceViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.clear
+
     }
 
     override func didReceiveMemoryWarning() {
