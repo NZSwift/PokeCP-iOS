@@ -9,7 +9,7 @@
 "DAm-H0-abW.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Enter your username here."; ObjectID = "KfG-Ca-bIj"; */
-"KfG-Ca-bIj.placeholder" = "Enter your username here.";
+"KfG-Ca-bIj.placeholder" = "당신의 사용자 이름을 입력하시오.";
 
 /* Class = "UISearchBar"; placeholder = "Search Pokemons"; ObjectID = "OYv-fR-0RX"; */
 "OYv-fR-0RX.placeholder" = "검색 포켓몬";
