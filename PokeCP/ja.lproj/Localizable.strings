@@ -5,6 +5,9 @@
  Created by Liguo Jiao on 2016/9/25.
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
+SELF_INTRO_POSITION1 = "소프트웨어 엔지니어";
+SELF_INTRO_POSITION2 = "iOS 개발자";
+SELF_INTRO_LOCATION = "크라이스트처치, 뉴질랜드";
 
 selfIntro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
 UsernameCheckViewResultLabelTaken = "Username is taken.";

@@ -95,7 +95,7 @@ class CPDetailsViewController: UITableViewController {
                 return emptyCell
             }
             cell.selectionStyle = .none
-            cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[(indexPath as NSIndexPath).row].name)")
+            cell.pokemonImage.image = UIImage(named: "\(pokemonGenerationList[(indexPath as NSIndexPath).row].imageName)")
             cell.name.text = "\(pokemonGenerationList[(indexPath as NSIndexPath).row].name)"
             cell.generationNumber.text = "\(((indexPath as NSIndexPath).row+2).ordinal())"
             return cell

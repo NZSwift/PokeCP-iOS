@@ -5,8 +5,10 @@
  Created by Liguo Jiao on 2016/9/25.
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
+SELF_INTRO_POSITION1 = "Инженер программного обеспечения ";
+SELF_INTRO_POSITION2 = "iOS Разработчикx";
+SELF_INTRO_LOCATION = "Кристчёрч, Новая Зеландия";
 
-selfIntro = "Инженер программного обеспечения \n iOS Разработчик \n\n Кристчёрч, Новая Зеландия";
 UsernameCheckViewResultLabelTaken = "Логин занят";
 UsernameCheckViewResultLabelAvailable = "Логин свободен";
 

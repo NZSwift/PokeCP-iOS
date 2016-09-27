@@ -121,8 +121,6 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             } else {
                 return pokemonList.count
             }
-        } else if viewType == 2 {
-            return 1
         } else {
             return 1
         }

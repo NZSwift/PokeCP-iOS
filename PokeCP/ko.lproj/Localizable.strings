@@ -6,7 +6,10 @@
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
 
-selfIntro = "소프트웨어 엔지니어 \n iOS 개발자 \n\n 크라이스트처치, 뉴질랜드”;
+SELF_INTRO_POSITION1 = "소프트웨어 엔지니어";
+SELF_INTRO_POSITION2 = "iOS 개발자";
+SELF_INTRO_LOCATION = "크라이스트처치, 뉴질랜드";
+
 UsernameCheckViewResultLabelTaken = "이미 사용되는 이름입니다.";
 UsernameCheckViewResultLabelAvailable = "그 이름은 사용 가능합니다.";
 
@@ -20,7 +23,7 @@ BACK = "뒤로";
 Message_Please_Enter_Your_Pokemon_CP = "당신의 포켓몬 전투력을 입력해주세요.";
 Message_Enter_Your_Pokemon_CP = "당신의 포켓몬 전투력을 입력하세요.";
 
-CACEL = "취소";
+CANCEL = "취소";
 NEXT = "다음";
 
 CANDY = "사탕";

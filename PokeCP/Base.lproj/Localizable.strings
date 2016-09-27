@@ -6,7 +6,10 @@
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
 
-selfIntro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
+SELF_INTRO_POSITION1 = "Software Engineer";
+SELF_INTRO_POSITION2 = "iOS Developer";
+SELF_INTRO_LOCATION = "Christchurch, New Zealand";
+
 UsernameCheckViewResultLabelTaken = "Username is taken.";
 UsernameCheckViewResultLabelAvailable = "Username is available.";
 

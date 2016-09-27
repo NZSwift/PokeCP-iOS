@@ -6,7 +6,10 @@
   Copyright © 2016年 Liguo Jiao. All rights reserved.
 */
 
-selfIntro = "軟體工程師 \n iOS 開發工程師 \n\n 基督城, 紐西蘭";
+SELF_INTRO_POSITION1 = "軟體工程師";
+SELF_INTRO_POSITION2 = "iOS 開發工程師";
+SELF_INTRO_LOCATION = "基督城, 紐西蘭";
+
 UsernameCheckViewResultLabelTaken = "帳戶名已被註冊.";
 UsernameCheckViewResultLabelAvailable = "帳戶名可以註冊.";
 

@@ -5,8 +5,10 @@
  Created by Liguo Jiao on 2016/9/25.
  Copyright © 2016年 Liguo Jiao. All rights reserved.
  */
+SELF_INTRO_POSITION1 = "软件工程师";
+SELF_INTRO_POSITION2 = "iOS 开发者";
+SELF_INTRO_LOCATION = "基督城, 新西兰";
 
-selfIntro = "软件工程师 \n iOS 开发者 \n\n 基督城, 新西兰";
 UsernameCheckViewResultLabelTaken = "用户名已经被注册.";
 UsernameCheckViewResultLabelAvailable = "用户名可以使用.";
 CPCalculator = "CP战斗力计算器";
