@@ -24,7 +24,7 @@
 	* **French**
 	* Portuguese
 	* Spanish
-	* **Chinese(simplified TW&HK/traditional)**
+	* **Chinese(simplified/traditional TW&HK)**
 	* **Japanese**
 	* **Korean**
 	* Filipino
