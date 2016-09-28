@@ -3,16 +3,16 @@
 "5pl-O7-8KK.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Check"; ObjectID = "6X3-X7-M9I"; */
-"6X3-X7-M9I.normalTitle" = "Check";
+"6X3-X7-M9I.normalTitle" = "Recherche";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "DAm-H0-abW"; */
 "DAm-H0-abW.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Enter your username here."; ObjectID = "KfG-Ca-bIj"; */
-"KfG-Ca-bIj.placeholder" = "Enter your username here.";
+"KfG-Ca-bIj.placeholder" = "Entrez votre nom d'utilisateur ici.";
 
 /* Class = "UISearchBar"; placeholder = "Search Pokemons"; ObjectID = "OYv-fR-0RX"; */
-"OYv-fR-0RX.placeholder" = "Search Pokemons";
+"OYv-fR-0RX.placeholder" = "Recherche Pokemons";
 
 /* Class = "UISearchBar"; OYv-fR-0RX.scopeButtonTitles[0] = "Title"; ObjectID = "OYv-fR-0RX"; */
 "OYv-fR-0RX.scopeButtonTitles[0]" = "Title";
