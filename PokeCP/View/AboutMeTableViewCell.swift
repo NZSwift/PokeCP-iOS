@@ -12,6 +12,8 @@ class AboutMeTableViewCell: UITableViewCell {
     @IBOutlet var introLabel: UILabel!
     @IBOutlet var headImage: UIImageView!
     
+    @IBOutlet var nameLabel: UILabel!
+    
     @IBAction func twitterAction(_ sender: AnyObject) {
         openURL("https://twitter.com/jiaoliguo")
     }
@@ -32,6 +34,8 @@ class AboutMeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.layoutIfNeeded()
+        nameLabel.text = "Liguo Jiao"
+        nameLabel.textColor = UIColor(red: 255.0/255.0, green: 215.0/255.0, blue: 0.0/255.0, alpha: 1.0)
         headImage.layer.borderWidth = 10
         headImage.layer.borderColor = UIColor.black.cgColor
         headImage.layer.cornerRadius = self.headImage.frame.size.height/2

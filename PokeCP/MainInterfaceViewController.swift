@@ -10,16 +10,15 @@ import UIKit
 
 class MainInterfaceViewController: UITableViewController {
     let buttons = [NSLocalizedString("CPCalculator", comment: "CP Calculator"), NSLocalizedString("UsernameCheck", comment: "Username Check"), NSLocalizedString("AboutMe", comment: "About me")]
-    
     var destinationVCIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.clear
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

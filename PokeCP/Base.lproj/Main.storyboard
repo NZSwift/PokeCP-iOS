@@ -272,16 +272,27 @@
                                                 <action selector="blogAction:" destination="fvI-wc-lFl" eventType="touchUpInside" id="aLl-je-CFs"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mi7-nA-4Fc">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="204" id="Due-rw-ik7"/>
+                                                <constraint firstAttribute="height" constant="27" id="a3s-yR-Qks"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Mi7-nA-4Fc" firstAttribute="centerX" secondItem="vh9-yy-uiZ" secondAttribute="centerX" id="1cg-4G-sqh"/>
                                         <constraint firstItem="ZqD-Hl-9qi" firstAttribute="centerX" secondItem="vh9-yy-uiZ" secondAttribute="centerX" id="5RM-E0-aWd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="WOH-x9-jqb" secondAttribute="trailing" constant="50" id="MtP-Vz-AJa"/>
                                         <constraint firstItem="MZ5-wp-Osj" firstAttribute="leading" secondItem="ZqD-Hl-9qi" secondAttribute="trailing" constant="8" id="O0T-n1-H8N"/>
+                                        <constraint firstItem="WOH-x9-jqb" firstAttribute="top" secondItem="Mi7-nA-4Fc" secondAttribute="bottom" constant="8" id="P5X-3M-mTa"/>
                                         <constraint firstItem="ZqD-Hl-9qi" firstAttribute="leading" secondItem="g0L-lC-fPZ" secondAttribute="trailing" constant="8" id="Rf5-Xc-Be4"/>
                                         <constraint firstItem="L6S-Ck-E3U" firstAttribute="leading" secondItem="vh9-yy-uiZ" secondAttribute="leadingMargin" constant="-8" id="SLd-tW-WIo"/>
-                                        <constraint firstItem="WOH-x9-jqb" firstAttribute="top" secondItem="L6S-Ck-E3U" secondAttribute="bottom" constant="43" id="SbH-8X-j1a"/>
                                         <constraint firstItem="ZqD-Hl-9qi" firstAttribute="centerY" secondItem="g0L-lC-fPZ" secondAttribute="centerY" id="YHQ-PX-bcw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="L6S-Ck-E3U" secondAttribute="trailing" constant="-8" id="ZDd-Ju-KmK"/>
+                                        <constraint firstItem="Mi7-nA-4Fc" firstAttribute="top" secondItem="L6S-Ck-E3U" secondAttribute="bottom" constant="8" id="Zbe-5O-or7"/>
                                         <constraint firstItem="ZqD-Hl-9qi" firstAttribute="top" secondItem="WOH-x9-jqb" secondAttribute="bottom" constant="8" id="a1S-tV-4zI"/>
                                         <constraint firstItem="MZ5-wp-Osj" firstAttribute="centerY" secondItem="g0L-lC-fPZ" secondAttribute="centerY" id="hYu-Oh-oCF"/>
                                         <constraint firstItem="WOH-x9-jqb" firstAttribute="leading" secondItem="vh9-yy-uiZ" secondAttribute="leadingMargin" constant="50" id="jMi-6B-3nL"/>
@@ -292,6 +303,7 @@
                                 <connections>
                                     <outlet property="headImage" destination="ztL-OB-6tX" id="E3u-ar-CYf"/>
                                     <outlet property="introLabel" destination="WOH-x9-jqb" id="cGF-Ld-Jc0"/>
+                                    <outlet property="nameLabel" destination="Mi7-nA-4Fc" id="WCU-fi-er6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -320,7 +332,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1632" y="1402.8485757121441"/>
+            <point key="canvasLocation" x="1625.5999999999999" y="1297.6011994002999"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="uOv-8b-eFC">

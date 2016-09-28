@@ -190,7 +190,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             imageView.image = UIImage(named: "\(pokemon!.imageName)")
             alert.view.addSubview(pokemonImageView)
 
-            modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.white, buttonColor: PCPColorNavigationCyan)
+            
             alert.addTextField(configurationHandler: { (textField) -> Void in
                 textField.placeholder = NSLocalizedString("Message_Enter_Your_Pokemon_CP", comment: "Enter your pokemon CP")
                 textField.delegate = self
@@ -208,6 +208,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 self.performSegue(withIdentifier: "pokeDetails", sender: self)
 
             }))
+            modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.white, buttonColor: PCPColorNavigationCyan)
             self.present(alert, animated: true, completion: nil)
         } else if viewType == 2 {
             tableView.allowsSelection = false
@@ -216,8 +217,10 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
     
     func modifyAlertView(_ alert: UIAlertController, backgroundColor: UIColor, textColor: UIColor, buttonColor: UIColor?) {
         let subview = alert.view.subviews.first! as UIView
-        let view = subview.subviews.first! as UIView
+        let subview2 = subview.subviews.first! as UIView
+        let view = subview2.subviews.first! as UIView
 
+        subview.backgroundColor = backgroundColor
         view.backgroundColor = backgroundColor
         view.layer.cornerRadius = 10.0
         

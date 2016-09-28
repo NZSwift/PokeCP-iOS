@@ -14,13 +14,9 @@ class MainContentViewCell: UITableViewCell {
         // Initialization code
 
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.fadeOut(completion: {
-            (finished: Bool) -> Void in
-            self.fadeIn()
-        })
         // Configure the view for the selected state
     }
 
