@@ -24,6 +24,7 @@
 		0563EBA71D69468A00AF286F /* CPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA61D69468A00AF286F /* CPViewController.swift */; };
 		0563EBA91D696C5800AF286F /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBA81D696C5800AF286F /* Pokemon.swift */; };
 		0563EBAB1D696FAB00AF286F /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563EBAA1D696FAB00AF286F /* PokemonTableViewCell.swift */; };
+		05A0C6981D97826800D054EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05A0C69A1D97826800D054EC /* Localizable.strings */; };
 		0C667F684D9FEFBDA6DE42A1 /* Pods_PokeCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */; };
 		53E6350819FDF0CBB275D3A3 /* Pods_PokeCPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */; };
 		E65022BB1D7916860016D16B /* CPDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65022BA1D7916860016D16B /* CPDetailsViewController.swift */; };
@@ -73,6 +74,28 @@
 		0563EBA61D69468A00AF286F /* CPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPViewController.swift; sourceTree = "<group>"; };
 		0563EBA81D696C5800AF286F /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		0563EBAA1D696FAB00AF286F /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
+		05A0C6921D9695F900D054EC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		05A0C6931D9695F900D054EC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		05A0C6941D977E3B00D054EC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		05A0C6951D977E3B00D054EC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		05A0C6991D97826800D054EC /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		05A0C69B1D97826C00D054EC /* Base */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05A0C69D1D97827800D054EC /* zh-Hant */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		05A0C69E1D97EF4300D054EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		05A0C69F1D97EF4300D054EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05A0C6A01D97EF4300D054EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05A0C6A11D97F41700D054EC /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		05A0C6A21D97F41700D054EC /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		05A0C6A31D97F41700D054EC /* zh-Hant-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant-HK"; path = "zh-Hant-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		05A0C6A41D97F98800D054EC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		05A0C6A51D97F98800D054EC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05A0C6A61D97F98800D054EC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05A0C6A71D97FB4800D054EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		05A0C6A81D97FB4800D054EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05A0C6A91D97FB4800D054EC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		05A0C6AA1D97FCCC00D054EC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		05A0C6AB1D97FCCC00D054EC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		05A0C6AC1D97FCCC00D054EC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C2EDA18FE03528465092F31 /* Pods-PokeCPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPTests/Pods-PokeCPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D81BF17B71E880132B1ED7C /* Pods-PokeCPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPUITests/Pods-PokeCPUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +106,9 @@
 		E65022BA1D7916860016D16B /* CPDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPDetailsViewController.swift; path = View/CPDetailsViewController.swift; sourceTree = "<group>"; };
 		E65022BC1D791C390016D16B /* CPDImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDImageViewCell.swift; sourceTree = "<group>"; };
 		E65022BE1D791C700016D16B /* CPDInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDInfoViewCell.swift; sourceTree = "<group>"; };
+		E653EE1E1D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		E653EE1F1D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E653EE201D99E94A00602CF0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5838A2925A52B34BD455244 /* Pods-PokeCP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCP.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCP/Pods-PokeCP.release.xcconfig"; sourceTree = "<group>"; };
 		FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +187,7 @@
 				0517B3571D66DD920015CDFA /* LaunchScreen.storyboard */,
 				0517B35A1D66DD920015CDFA /* Info.plist */,
 				0517B3521D66DD920015CDFA /* PokeCP.xcdatamodeld */,
+				05A0C69A1D97826800D054EC /* Localizable.strings */,
 			);
 			path = PokeCP;
 			sourceTree = "<group>";
@@ -300,7 +327,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Liguo Jiao";
 				TargetAttributes = {
 					0517B3471D66DD920015CDFA = {
@@ -327,6 +354,13 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				ja,
+				"zh-Hant-HK",
+				ko,
+				ru,
+				de,
+				fr,
 			);
 			mainGroup = 0517B33F1D66DD920015CDFA;
 			productRefGroup = 0517B3491D66DD920015CDFA /* Products */;
@@ -346,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0517B3591D66DD920015CDFA /* LaunchScreen.storyboard in Resources */,
+				05A0C6981D97826800D054EC /* Localizable.strings in Resources */,
 				0517B3561D66DD920015CDFA /* Assets.xcassets in Resources */,
 				0517B3511D66DD920015CDFA /* Main.storyboard in Resources */,
 			);
@@ -562,6 +597,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				0517B3501D66DD920015CDFA /* Base */,
+				05A0C6921D9695F900D054EC /* zh-Hans */,
+				05A0C6941D977E3B00D054EC /* zh-Hant */,
+				05A0C69E1D97EF4300D054EC /* ja */,
+				05A0C6A11D97F41700D054EC /* zh-Hant-HK */,
+				05A0C6A41D97F98800D054EC /* ko */,
+				05A0C6A71D97FB4800D054EC /* ru */,
+				05A0C6AA1D97FCCC00D054EC /* de */,
+				E653EE1E1D99E94A00602CF0 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -570,8 +613,32 @@
 			isa = PBXVariantGroup;
 			children = (
 				0517B3581D66DD920015CDFA /* Base */,
+				05A0C6931D9695F900D054EC /* zh-Hans */,
+				05A0C6951D977E3B00D054EC /* zh-Hant */,
+				05A0C69F1D97EF4300D054EC /* ja */,
+				05A0C6A21D97F41700D054EC /* zh-Hant-HK */,
+				05A0C6A51D97F98800D054EC /* ko */,
+				05A0C6A81D97FB4800D054EC /* ru */,
+				05A0C6AB1D97FCCC00D054EC /* de */,
+				E653EE1F1D99E94A00602CF0 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		05A0C69A1D97826800D054EC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05A0C6991D97826800D054EC /* zh-Hans */,
+				05A0C69B1D97826C00D054EC /* Base */,
+				05A0C69D1D97827800D054EC /* zh-Hant */,
+				05A0C6A01D97EF4300D054EC /* ja */,
+				05A0C6A31D97F41700D054EC /* zh-Hant-HK */,
+				05A0C6A61D97F98800D054EC /* ko */,
+				05A0C6A91D97FB4800D054EC /* ru */,
+				05A0C6AC1D97FCCC00D054EC /* de */,
+				E653EE201D99E94A00602CF0 /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -581,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -591,8 +659,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -614,7 +684,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -627,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -637,8 +708,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -654,9 +727,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -666,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DFC213FA86547EC9B999791 /* Pods-PokeCP.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V7QHHUD2M5;
 				INFOPLIST_FILE = PokeCP/Info.plist;
@@ -681,6 +756,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5838A2925A52B34BD455244 /* Pods-PokeCP.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V7QHHUD2M5;
 				INFOPLIST_FILE = PokeCP/Info.plist;
@@ -696,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C2EDA18FE03528465092F31 /* Pods-PokeCPTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PokeCPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -710,6 +787,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 938B074E9AB06152A0179CE4 /* Pods-PokeCPTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PokeCPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -724,6 +802,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D81BF17B71E880132B1ED7C /* Pods-PokeCPUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PokeCPUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPUITests;
@@ -737,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5CC735B1809FDD4D9FC13F4 /* Pods-PokeCPUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PokeCPUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = McKay.PokeCPUITests;

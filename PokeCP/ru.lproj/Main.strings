@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5pl-O7-8KK"; */
+"5pl-O7-8KK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Check"; ObjectID = "6X3-X7-M9I"; */
+"6X3-X7-M9I.normalTitle" = "Проверить";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DAm-H0-abW"; */
+"DAm-H0-abW.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter your username here."; ObjectID = "KfG-Ca-bIj"; */
+"KfG-Ca-bIj.placeholder" = "Введите ваш логин.";
+
+/* Class = "UISearchBar"; placeholder = "Search Pokemons"; ObjectID = "OYv-fR-0RX"; */
+"OYv-fR-0RX.placeholder" = "Искать Покемонов";
+
+/* Class = "UISearchBar"; OYv-fR-0RX.scopeButtonTitles[0] = "Title"; ObjectID = "OYv-fR-0RX"; */
+"OYv-fR-0RX.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UILabel"; text = "x"; ObjectID = "Qb0-Eb-dLy"; */
+"Qb0-Eb-dLy.text" = "x";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WOH-x9-jqb"; */
+"WOH-x9-jqb.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gyL-Ra-cgm"; */
+"gyL-Ra-cgm.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "quo-ZH-yGU"; */
+"quo-ZH-yGU.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uCy-ts-Gxf"; */
+"uCy-ts-Gxf.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xV2-uM-kXd"; */
+"xV2-uM-kXd.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yTx-yR-VJJ"; */
+"yTx-yR-VJJ.text" = "Label";

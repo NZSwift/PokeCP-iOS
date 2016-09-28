@@ -1,0 +1,162 @@
+/*
+ Localization.strings
+ PokeCP
+ 
+ Created by Liguo Jiao on 2016/9/25.
+ Copyright © 2016年 Liguo Jiao. All rights reserved.
+ */
+SELF_INTRO_POSITION1 = "ソフトウェアエンジニア";
+SELF_INTRO_POSITION2 = "iOS 開発者";
+SELF_INTRO_LOCATION = "クライストチャーチ, ニュージランド";
+
+
+UsernameCheckViewResultLabelTaken = "現在のユーザーIDは、使用されています。";
+UsernameCheckViewResultLabelAvailable = "ユーザー名が見つかりません.";
+
+CPCalculator = "戦闘能 の計算";
+UsernameCheck = "ユーザー名の確定";
+AboutMe = "開発者から";
+
+CP = "Combat Power";
+Message_Whats_your_pokemon_CP = "ポケモンの戦闘能力は、いくらですか?";
+BACK = "戻る";
+Message_Please_Enter_Your_Pokemon_CP = "ポケモンの戦闘能力を記入してください。";
+Message_Enter_Your_Pokemon_CP = "ポケモンの戦闘能力を記入してください。";
+
+CANCEL = "キャンセル";
+NEXT = "次へ";
+
+CANDY = "キャンディー";
+MIN_CP="最減の戦闘能力";
+MAX_CP= "最高の戦闘能力";
+TYPE= "種類";
+MAX_POWER= "最高の戦闘力";
+
+
+Bulbasaur = "フシギダネ";
+Ivysaur = "フシギソウ";
+Venusaur = "フシギバナ";
+Charmander = "ヒトカゲ";
+Charmeleon = "リザード";
+Charizard = "リザードン";
+Squirtle = "ゼニガメ";
+Wartortle = "カメール";
+Blastoise = "カメックス";
+Caterpie = "キャタピー";
+Metapod = "トランセル";
+Butterfree = "バタフリー";
+Weedle = "ビードル";
+Kakuna = "コクーン";
+Beedrill = "スピアー";
+Pidgey = "ポッポ";
+Pidgeotto = "ピジョン";
+Pidgeot = "ピジョット";
+Rattata = "コラッタ";
+Raticate = "ラッタ";
+Spearow = "オニスズメ";
+Fearow = "オニドリル";
+Ekans = "アーボ";
+Arbok = "アーボック";
+Pikachu = "ピカチュウ";
+Raichu = "ライチュウ";
+Sandshrew = "サンド";
+Sandslash = "サンドパン";
+NidoranFemale = "ニドラン♀";
+Nidorina = "ニドリーナ";
+Nidoqueen = "ニドクイン";
+NidoranMale = "ニドラン♂";
+Nidorino = "ニドリーノ";
+Nidoking = "ニドキング";
+Clefairy = "ピッピ";
+Clefable = "ピクシー";
+Vulpix = "ロコン";
+Ninetales = "キュウコン";
+Jigglypuff = "プリン";
+Wigglytuff = "プクリン";
+Zubat = "ズバット";
+Golbat = "ゴルバット";
+Oddish = "ナゾノクサ";
+Gloom = "クサイハナ";
+Vileplume = "ラフレシア";
+Paras = "パラス";
+Parasect = "パラセクト";
+Venonat = "コンパン";
+Venomoth = "モルフォン";
+Diglett = "ディグダ";
+Dugtrio = "ダグトリオ";
+Meowth = "ニャース";
+Persian = "ペルシアン";
+Psyduck = "コダック";
+Golduck = "ゴルダック";
+Mankey = "マンキー";
+Primeape = "オコリザル";
+Growlithe = "ガーディ";
+Arcanine = "ウインディ";
+Poliwag = "ニョロモ";
+Poliwhirl = "ニョロゾ";
+Poliwrath = "ニョロボン";
+Abra = "ケーシィ";
+Kadabra = "ユンゲラー";
+Alakazam = "フーディン";
+Machop = "ワンリキー";
+Machoke = "ゴーリキー";
+Machamp = "カイリキー";
+Bellsprout = "マダツボミ";
+Weepinbell = "ウツドン";
+Victreebel = "ウツボット";
+Tentacool = "メノクラゲ";
+Tentacruel = "ドククラゲ";
+Geodude = "イシツブテ";
+Graveler = "ゴローン";
+Golem = "ゴローニャ";
+Ponyta = "ポニータ";
+Rapidash = "ギャロップ";
+Slowpoke = "ヤドン";
+Slowbro = "ヤドラン";
+Magnemite = "コイル";
+Magneton = "レアコイル";
+Doduo = "ドードー";
+Dodrio = "ドードリオ";
+Seel = "パウワウ";
+Dewgong = "ジュゴン";
+Grimer = "ベトベター";
+Muk = "ベトベトン";
+Shellder = "シェルダー";
+Cloyster = "パルシェン";
+Gastly = "ゴース";
+Haunter = "ゴースト";
+Gengar = "ゲンガー";
+Drowzee = "スリープ";
+Hypno = "スリーパー";
+Krabby = "クラブ";
+Kingler = "キングラー";
+Voltorb = "ビリリダマ";
+Electrode = "マルマイン";
+Exeggcute = "タマタマ";
+Exeggutor = "ナッシー";
+Cubone = "カラカラ";
+Marowak = "ガラガラ";
+Hitmonlee = "サワムラー";
+Koffing = "ドガース";
+Weezing = "マタドガス";
+Rhyhorn = "サイホーン";
+Rhydon = "サイドン";
+Horsea = "タッツー";
+Seadra = "シードラ";
+Goldeen = "トサキント";
+Seaking = "アズマオウ";
+Staryu = "ヒトデマン";
+Starmie = "スターミー";
+Magikarp = "コイキング";
+Gyarados = "ギャラドス";
+Eevee = "イーブイ";
+Vaporeon = "シャワーズ";
+Jolteon = "サンダース";
+Flareon = "ブースター";
+Omanyte = "オムナイト";
+Omastar = "オムスター";
+Kabuto = "カブト";
+Kabutops = "カブトプス";
+Dratini = "ミニリュウ";
+Dragonair = "ハクリュー";
+Dragonite = "カイリュー";

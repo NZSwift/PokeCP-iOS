@@ -36,11 +36,16 @@ class AboutMeTableViewCell: UITableViewCell {
         headImage.layer.borderColor = UIColor.black.cgColor
         headImage.layer.cornerRadius = self.headImage.frame.size.height/2
         headImage.clipsToBounds = true
-        let intro: String = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand"
+        let firstLine = NSLocalizedString("SELF_INTRO_POSITION1", comment: "Software Engineer")
+        let secondLine = NSLocalizedString("SELF_INTRO_POSITION2", comment: "iOS Developer")
+        let thirdLine = NSLocalizedString("SELF_INTRO_LOCATION", comment: "Christchurch, New Zealand")
+        
+        let intro: String = "\(firstLine) \n \(secondLine) \n\n \(thirdLine)"
         let content: NSMutableAttributedString = NSMutableAttributedString(string: intro, attributes: [NSFontAttributeName:UIFont(name: "Helvetica", size: 18.0)!])
-        content.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location:0,length:18))
-        content.addAttribute(NSForegroundColorAttributeName, value: PCPColorContent, range: NSRange(location:20,length:13))
-        content.addAttribute(NSForegroundColorAttributeName, value: PCPColorAmber, range: NSRange(location:37,length:25 ))
+        
+        content.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: firstLine.characters.count))
+        content.addAttribute(NSForegroundColorAttributeName, value: PCPColorContent, range: NSRange(location: firstLine.characters.count + 3, length: secondLine.characters.count))
+        content.addAttribute(NSForegroundColorAttributeName, value: PCPColorAmber, range: NSRange(location: firstLine.characters.count + secondLine.characters.count + 7, length: thirdLine.characters.count))
         introLabel.attributedText = content
 
     }

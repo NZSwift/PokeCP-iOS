@@ -1,0 +1,193 @@
+/* 
+  Localization.strings
+  PokeCP
+
+  Created by Liguo Jiao on 2016/9/25.
+  Copyright © 2016年 Liguo Jiao. All rights reserved.
+*/
+
+self-intro = "Software Engineer \n iOS Developer \n\n Christchurch, New Zealand";
+UsernameCheckView-resultLabel-taken = "Username is taken.";
+UsernameCheckView-resultLabel-available = "Username is available.";
+
+Abra = "Abra";
+Kadabra = "Kadabra";
+Alakazam = "Alakazam";
+
+Bellsprout = "Bellsprout";
+Weepinbell = "Weepinbell";
+Victreebel = "Victreebel";
+
+Bulbasaur = "Bulbasaur";
+Ivysaur = "Ivysaur";
+Venusaur = "Venusaur";
+
+Caterpie = "Caterpie";
+Metapod = "Metapod";
+Butterfree = "Butterfree";
+
+Charmander = "Charmander";
+Charmeleon = "Charmeleon";
+Charizard = "Charizard";
+
+Clefairy = "Clefairy";
+Clefable = "Clefable";
+
+Cubone = "Cubone";
+Marowak = "Marowak";
+
+Diglett = "Diglett";
+Dugtrio = "Dugtrio";
+
+Doduo = "Doduo";
+Dodrio = "Dodrio";
+
+Dratini = "Dratini";
+Dragonair = "Dragonair";
+Dragonite = "Dragonite";
+
+Drowzee = "Drowzee";
+Hypno = "Hypno";
+
+Eevee = "Eevee";
+Vaporeon = "Vaporeon";
+Jolteon = "Jolteon";
+Flareon = "Flareon";
+
+Ekans = "Ekans";
+Arbok = "Arbok";
+
+Exeggcute = "Exeggcute";
+Exeggutor = "Exeggutor";
+
+Gastly = "Gastly";
+Haunter = "Haunter";
+
+Gengar = "Gengar";
+Geodude = "Geodude";
+
+Graveler = "Graveler";
+Golem = "Golem";
+
+Goldeen = "Goldeen";
+Seaking = "Seaking";
+
+Grimer = "Grimer";
+Muk = "Muk";
+
+Growlithe = "Growlithe";
+Arcanine = "Arcanine";
+
+Hitmonlee = "Hitmonlee";
+
+Horsea = "Horsea";
+Seadra = "Seadra";
+
+Jigglypuff = "Jigglypuff";
+Wigglytuff = "Wigglytuff";
+
+Kabuto = "Kabuto";
+Kabutops = "Kabutops";
+
+Koffing = "Koffing";
+Weezing = "Weezing";
+
+Krabby = "Krabby";
+Kingler = "Kingler";
+
+Machop = "Machop";
+Machoke = "Machoke";
+Machamp = "Machamp";
+
+Magikarp = "Magikarp";
+Gyarados = "Gyarados";
+
+Magnemite = "Magnemite";
+Magneton = "Magneton";
+
+Mankey = "Mankey";
+Primeape = "Primeape";
+
+Meowth = "Meowth";
+Persian = "Persian";
+
+Nidoran♀ = "Nidoran♀";
+Nidorina = "Nidorina";
+Nidoqueen = "Nidoqueen";
+
+Nidoran♂ = "Nidoran♂";
+Nidorino = "Nidorino";
+Nidoking = "Nidoking";
+
+Oddish = "Oddish";
+Gloom = "Gloom";
+Vileplume = "Vileplume";
+
+Omanyte = "Omanyte";
+Omastar = "Omastar";
+
+Paras = "Paras";
+Parasect = "Parasect";
+
+Pidgey = "Pidgey";
+Pidgeotto = "Pidgeotto";
+Pidgeot = "Pidgeot";
+
+Pikachu = "Pikachu";
+Raichu = "Raichu";
+
+Poliwag = "Poliwag";
+Poliwhirl = "Poliwhirl";
+Poliwrath = "Poliwrath";
+
+Ponyta = "Ponyta";
+Rapidash = "Rapidash";
+
+Psyduck = "Psyduck";
+Golduck = "Golduck";
+
+Rattata = "Rattata";
+Raticate = "Raticate";
+
+Rhyhorn = "Rhyhorn";
+Rhydon = "Rhydon";
+
+Sandshrew = "Sandshrew";
+Sandslash = "Sandslash";
+
+Seel = "Seel";
+Dewgong = "Dewgong";
+
+Shellder = "Shellder";
+Cloyster = "Cloyster";
+
+Slowpoke = "Slowpoke";
+Slowbro = "Slowbro";
+
+Spearow = "Spearow";
+Fearow = "Fearow";
+
+Squirtle = "Squirtle";
+Wartortle = "Wartortle";
+Blastoise = "Blastoise";
+
+Staryu = "Staryu";
+Starmie = "Starmie";
+
+Tentacool = "Tentacool";
+Tentacruel = "Tentacruel";
+
+Venonat = "Venonat";
+Venomoth = "Venomoth";
+Voltorb = "Voltorb";
+Electrode = "Electrode";
+
+Vulpix = "Vulpix";
+Ninetales = "Ninetales";
+
+Weedle = "Weedle";
+Kakuna = "Kakuna";
+Beedrill = "Beedrill";
+
+Zubat = "Zubat";
+Golbat = "Golbat";

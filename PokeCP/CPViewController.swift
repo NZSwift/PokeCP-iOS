@@ -37,16 +37,16 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.barTintColor = PCPColorNavigationCyan
         tableView.reloadData()
-        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPViewController.back))
+        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: NSLocalizedString("BACK", comment: "Back"), style: .plain, target: self, action: #selector(CPViewController.back))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if viewType == 0 {
-            self.title = "CP Calculator"
+            self.title = NSLocalizedString("CPCalculator", comment: "CP Calculator")
         } else if viewType == 1 {
-            self.title = "Username Check"
+            self.title = NSLocalizedString("UsernameCheck", comment: "Username Check")
         } else {
-            self.title = "About me"
+            self.title = NSLocalizedString("AboutMe", comment: "About me")
         }
     }
     
@@ -121,8 +121,6 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
             } else {
                 return pokemonList.count
             }
-        } else if viewType == 2 {
-            return 1
         } else {
             return 1
         }
@@ -142,7 +140,7 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 pokemon = self.pokemonList[(indexPath as NSIndexPath).row]
             }
             cell.textLabel?.text = pokemon.name
-            cell.imageView?.image = UIImage(named: "\(pokemon.name)")
+            cell.imageView?.image = UIImage(named: "\(pokemon.imageName)")
             
             return cell
         case 1:
@@ -180,25 +178,25 @@ class CPViewController: UITableViewController, UISearchDisplayDelegate, UISearch
                 pokemon = self.pokemonList[(indexPath as NSIndexPath).row]
             }
             
-            let alert = UIAlertController(title: "Combat Power", message: "What's your CP?", preferredStyle: .alert)
+            let alert = UIAlertController(title: NSLocalizedString("CP", comment: "Combat Power"), message: NSLocalizedString("Message_Whats_your_pokemon_CP", comment: "What's your Pokemon CP?"), preferredStyle: .alert)
             let imageView = UIImageView(frame: CGRect(x: 200, y: 10, width: 60, height: 50))
             imageView.image = UIImage(named: "HeaderLogo")
             alert.view.addSubview(imageView)
             
-            let secondLayerAlert = UIAlertController(title: "Oops", message: "Please enter your pokemon CP.", preferredStyle: .alert)
-            secondLayerAlert.addAction(UIAlertAction(title: "Back", style: .cancel, handler: nil))
+            let secondLayerAlert = UIAlertController(title: "Oops", message: NSLocalizedString("Message_Please_Enter_Your_Pokemon_CP", comment: "Please enter your pokemon CP."), preferredStyle: .alert)
+            secondLayerAlert.addAction(UIAlertAction(title: NSLocalizedString("BACK", comment: "back"), style: .cancel, handler: nil))
             
-            let pokemonImageView = UIImageView(frame: CGRect(x: 0, y: 10, width: 60, height: 50))
-            imageView.image = UIImage(named: "\(pokemon!.name)")
+            let pokemonImageView = UIImageView(frame: CGRect(x: 0, y: 10, width: 60, height: 50))            
+            imageView.image = UIImage(named: "\(pokemon!.imageName)")
             alert.view.addSubview(pokemonImageView)
 
             modifyAlertView(alert, backgroundColor: PCPColorBackground, textColor: UIColor.white, buttonColor: PCPColorNavigationCyan)
             alert.addTextField(configurationHandler: { (textField) -> Void in
-                textField.placeholder = "Enter your pokemon CP"
+                textField.placeholder = NSLocalizedString("Message_Enter_Your_Pokemon_CP", comment: "Enter your pokemon CP")
                 textField.delegate = self
             })
-            alert.addAction(UIAlertAction(title: "Cancle", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Next", style: .default, handler: { (UIAlertAction) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: "Cancel"), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("NEXT", comment: "Next"), style: .default, handler: { (UIAlertAction) in
                 guard let inputField = alert.textFields![0] as? UITextField else {
                     return
                 }
