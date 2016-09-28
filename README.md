@@ -19,12 +19,14 @@
 	* Environment require minimum: **iOS 9**
 * Support Language
 	* **English**
-	* Spanish
+	* **German**
+	* **Russian**
+	* **French**
 	* Portuguese
-	* Chinese(simplified/traditional)
-	* Japanese
-	* Korean
-	* Maori
+	* Spanish
+	* **Chinese(simplified TW&HK/traditional)**
+	* **Japanese**
+	* **Korean**
 	* Filipino
 	* Thai
 	* Uighur
