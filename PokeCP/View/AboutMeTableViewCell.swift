@@ -35,11 +35,12 @@ class AboutMeTableViewCell: UITableViewCell {
         // Initialization code
         self.layoutIfNeeded()
         nameLabel.text = "Liguo Jiao"
-        nameLabel.textColor = UIColor(red: 255.0/255.0, green: 215.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        nameLabel.textColor = PCPColorGold
         headImage.layer.borderWidth = 10
         headImage.layer.borderColor = UIColor.black.cgColor
         headImage.layer.cornerRadius = self.headImage.frame.size.height/2
         headImage.clipsToBounds = true
+        self.selectionStyle = .none
         let firstLine = NSLocalizedString("SELF_INTRO_POSITION1", comment: "Software Engineer")
         let secondLine = NSLocalizedString("SELF_INTRO_POSITION2", comment: "iOS Developer")
         let thirdLine = NSLocalizedString("SELF_INTRO_LOCATION", comment: "Christchurch, New Zealand")

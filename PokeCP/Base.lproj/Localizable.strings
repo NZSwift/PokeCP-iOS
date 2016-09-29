@@ -31,7 +31,7 @@ MIN_CP="Min CP";
 MAX_CP= "Max CP";
 TYPE= "Type";
 MAX_POWER= "Max Power";
-
+CURRENT_CP = "Current CP";
 
 Abra = "Abra";
 Kadabra = "Kadabra";

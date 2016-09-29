@@ -16,7 +16,7 @@ let PCPColorNavigationCyan = UIColor(red: 78.0 / 255.0, green: 185.0 / 255.0, bl
 let PCPColorRed = UIColor(red: 233.0 / 255.0, green: 100.0 / 255.0, blue: 103.0 / 255.0, alpha: 1.0)
 let PCPColorBlue = UIColor(red: 60.0 / 255.0 , green: 160.0 / 255.0, blue: 196.0 / 255.0, alpha: 1.0)
 let PCPColorAmber = UIColor(red: 244.0 / 255.0, green: 161.0 / 255.0, blue: 102.0 / 255.0, alpha: 1.0)
-
+let PCPColorGold = UIColor(red: 255.0/255.0, green: 215.0/255.0, blue: 0.0/255.0, alpha: 1.0)
 
 // MARK: - Device
 open class Device {
