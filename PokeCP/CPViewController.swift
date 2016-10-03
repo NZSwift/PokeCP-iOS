@@ -15,6 +15,7 @@ class CPViewController: UITableViewController, UISearchResultsUpdating, UISearch
     var inputCP: Int = 0
     var viewType: Int = 0 //0: CP Calculator, 1: Username Check, 2, About me
     let searchController = UISearchController(searchResultsController: nil)
+    var found: Bool = false
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let inverseSet = CharacterSet(charactersIn:"0123456789").inverted
@@ -83,9 +84,11 @@ class CPViewController: UITableViewController, UISearchResultsUpdating, UISearch
     fileprivate func searchContent(_ searchInput: String, scope: String = "Title") {
         self.filtedPokemonList = self.pokemonList.filter({ (pokemon: Pokemon) -> Bool in
             let categoryMatch = (scope == "Title")
-            let stringMatch = pokemon.name.range(of: searchInput)
-            return categoryMatch && (stringMatch != nil)
+            let stringMatch = pokemon.name.lowercased().range(of: searchInput.lowercased())
+            found = categoryMatch && (stringMatch != nil)
+            return found
         })
+        print(filtedPokemonList)
         tableView.reloadData()
     }
     func updateSearchResults(for searchController: UISearchController) {
@@ -103,7 +106,6 @@ class CPViewController: UITableViewController, UISearchResultsUpdating, UISearch
         searchBar.resignFirstResponder()
         searchBar.text = ""
     }
-    
     
     // MARK: Tableview
     
@@ -183,9 +185,9 @@ class CPViewController: UITableViewController, UISearchResultsUpdating, UISearch
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        searchController.isActive = false
+
         if viewType == 0 {
-            if searchController.isActive && searchController.searchBar.text != "" {
+            if self.filtedPokemonList.isEmpty == false {
                 pokemon = self.filtedPokemonList[(indexPath as NSIndexPath).row]
             } else {
                 pokemon = self.pokemonList[(indexPath as NSIndexPath).row]

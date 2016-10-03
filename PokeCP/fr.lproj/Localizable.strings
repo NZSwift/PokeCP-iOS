@@ -22,7 +22,7 @@ BACK = "Retour";
 Message_Please_Enter_Your_Pokemon_CP = "veuillez entrer la PC de votre pokemon.";
 Message_Enter_Your_Pokemon_CP = "Entrer la PC de votre pokemon.";
 
-CACEL = "Annuler";
+CANCEL = "Annuler";
 NEXT = "Suivant";
 
 CANDY = "Friandise";
