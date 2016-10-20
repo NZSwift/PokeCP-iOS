@@ -27,6 +27,7 @@
 		05A0C6981D97826800D054EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05A0C69A1D97826800D054EC /* Localizable.strings */; };
 		0C667F684D9FEFBDA6DE42A1 /* Pods_PokeCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3A1F6DDFBEEC61514C798D /* Pods_PokeCP.framework */; };
 		53E6350819FDF0CBB275D3A3 /* Pods_PokeCPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0947942FBC5D9C30341BE79B /* Pods_PokeCPTests.framework */; };
+		E63E35D81DB857F400A39599 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E63E35D71DB857F400A39599 /* GoogleService-Info.plist */; };
 		E65022BB1D7916860016D16B /* CPDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65022BA1D7916860016D16B /* CPDetailsViewController.swift */; };
 		E65022BD1D791C390016D16B /* CPDImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65022BC1D791C390016D16B /* CPDImageViewCell.swift */; };
 		E65022BF1D791C700016D16B /* CPDInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65022BE1D791C700016D16B /* CPDInfoViewCell.swift */; };
@@ -103,6 +104,8 @@
 		9DFC213FA86547EC9B999791 /* Pods-PokeCP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCP/Pods-PokeCP.debug.xcconfig"; sourceTree = "<group>"; };
 		B1585443E2B10AA221594CDE /* Pods_PokeCPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokeCPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CC735B1809FDD4D9FC13F4 /* Pods-PokeCPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeCPUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PokeCPUITests/Pods-PokeCPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E63E35D71DB857F400A39599 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E63E35D91DB85EB100A39599 /* PokeCP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokeCP-Bridging-Header.h"; sourceTree = "<group>"; };
 		E65022BA1D7916860016D16B /* CPDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPDetailsViewController.swift; path = View/CPDetailsViewController.swift; sourceTree = "<group>"; };
 		E65022BC1D791C390016D16B /* CPDImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDImageViewCell.swift; sourceTree = "<group>"; };
 		E65022BE1D791C700016D16B /* CPDInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPDInfoViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +157,7 @@
 		0517B33F1D66DD920015CDFA = {
 			isa = PBXGroup;
 			children = (
+				E63E35D91DB85EB100A39599 /* PokeCP-Bridging-Header.h */,
 				0517B34A1D66DD920015CDFA /* PokeCP */,
 				0517B3621D66DD920015CDFA /* PokeCPTests */,
 				0517B36D1D66DD920015CDFA /* PokeCPUITests */,
@@ -187,6 +191,7 @@
 				0517B3571D66DD920015CDFA /* LaunchScreen.storyboard */,
 				0517B35A1D66DD920015CDFA /* Info.plist */,
 				0517B3521D66DD920015CDFA /* PokeCP.xcdatamodeld */,
+				E63E35D71DB857F400A39599 /* GoogleService-Info.plist */,
 				05A0C69A1D97826800D054EC /* Localizable.strings */,
 			);
 			path = PokeCP;
@@ -309,6 +314,7 @@
 				0517B3671D66DD920015CDFA /* Frameworks */,
 				0517B3681D66DD920015CDFA /* Resources */,
 				16F5BE1BE13E7B59B0B8ABF9 /* [CP] Copy Pods Resources */,
+				6A97DFC5B0C978925572B19A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,6 +387,7 @@
 			files = (
 				0517B3591D66DD920015CDFA /* LaunchScreen.storyboard in Resources */,
 				05A0C6981D97826800D054EC /* Localizable.strings in Resources */,
+				E63E35D81DB857F400A39599 /* GoogleService-Info.plist in Resources */,
 				0517B3561D66DD920015CDFA /* Assets.xcassets in Resources */,
 				0517B3511D66DD920015CDFA /* Main.storyboard in Resources */,
 			);
@@ -458,7 +465,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4D74F73A7B2609CA5AE160F9 /* [CP] Check Pods Manifest.lock */ = {
@@ -473,7 +480,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		57DB6F1FEB37C0BA2AC13E6D /* [CP] Copy Pods Resources */ = {
@@ -506,6 +513,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeCPTests/Pods-PokeCPTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6A97DFC5B0C978925572B19A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PokeCPUITests/Pods-PokeCPUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BD9B411097FAE64B4C8678C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,7 +555,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -688,6 +710,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "PokeCP-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -730,6 +753,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "PokeCP-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
