@@ -3,6 +3,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 pod 'Alamofire', '~> 4.0'
+pod 'Google/Analytics'
 
 target 'PokeCP' do
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Google.Analytics
+
 
 class MainInterfaceViewController: UITableViewController {
     let buttons = [NSLocalizedString("CPCalculator", comment: "CP Calculator"), NSLocalizedString("UsernameCheck", comment: "Username Check"), NSLocalizedString("AboutMe", comment: "About me")]
@@ -17,6 +19,19 @@ class MainInterfaceViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         self.view.backgroundColor = PCPColorBackground
         self.tableView.separatorColor = UIColor.clear
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let tracker = GAI.sharedInstance().defaultTracker
+        let eventTracker: NSObject = GAIDictionaryBuilder.createEvent(
+            withCategory: "ui_action",
+            action: "button_press",
+            label: "play",
+            value: nil).build()
+        
+        tracker?.send(eventTracker as! [NSObject : AnyObject])
     }
     
     override func didReceiveMemoryWarning() {
